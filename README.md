@@ -1,0 +1,2 @@
+# nosql
+python nosql hangout
