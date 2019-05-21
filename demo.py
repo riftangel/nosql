@@ -41,7 +41,7 @@ def setup_logging():
 def open_store():
     try:
         kvproxyconfig = ProxyConfig()
-        kvproxyconfig.set_security_props_file('/home/ankh/nosql/kv-18.1.19/kvroot/security/user.security')
+        kvproxyconfig.set_security_props_file('kv-18.1.19/kvroot/security/user.security')
         kvstoreconfig = StoreConfig('kvstore', [storehost])
         kvstoreconfig.set_user("admin")
         return Factory.open(proxy, kvstoreconfig,kvproxyconfig)
@@ -110,10 +110,10 @@ if __name__ == '__main__':
 
     #do_store_ops(store)
 
- ##   for i in range(0,100000):
- ##       do_store_insert(store)
+    for i in range(0,100000):
+        do_store_insert(store)
 
-    #print store.execute_sync("SELECT uuid, desc FROM Users2")
+    print store.execute_sync("SELECT uuid, desc FROM Users2")
 
     rows = store.table_iterator("Users2", {}, False)
     for elt in rows:

@@ -3,14 +3,14 @@
   <component name="adminMountPoints" type="bootstrapParams" validate="false">
   </component>
   <component name="mountPoints" type="bootstrapParams" validate="false">
-    <property name="/home/ankh/nosql/kv-18.1.19/./kvroot/kvstore/sn1" value="1 GB" type="SIZE"/>
+    <property name="/scratch/mirivier/view_storage/mirivier_x8cc/ecs/exacloud/stage2/exacloud/nosql/kv-18.1.19/./kvroot/kvstore/sn1" value="1 GB" type="SIZE"/>
   </component>
   <component name="params" type="bootstrapParams" validate="true">
     <property name="capacity" value="1" type="INT"/>
-    <property name="haHostname" value="localhost" type="STRING"/>
+    <property name="haHostname" value="slc10zbn" type="STRING"/>
     <property name="haPortRange" value="5005,5007" type="STRING"/>
     <property name="hostingAdmin" value="true" type="BOOLEAN"/>
-    <property name="hostname" value="localhost" type="STRING"/>
+    <property name="hostname" value="slc10zbn" type="STRING"/>
     <property name="numCPUs" value="4" type="INT"/>
     <property name="registryPort" value="5000" type="INT"/>
     <property name="rootDir" value="./kvroot" type="STRING"/>
