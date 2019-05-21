@@ -1,0 +1,884 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <title>Oracle NoSQL Database Release Notes</title>
+</head>
+
+<body>
+
+<div class="docMain">
+<center>
+<h1>Oracle NoSQL Database 18.1<br>
+Release Notes</h1>
+</center>
+
+<!-- Note: RELEASE_VERSION_FULL and DATE are set by ant -->
+<p class="releaseInfo">Release 18.1.19 Community Edition, 2018-09-12 09:31:32 UTC</p>
+<h2><a name="contents">Contents</a></h2>
+<ul>
+<li><a href="#overview">Overview</a>
+<li><a href="#release">This Release</a>
+<li><a href="#features">New Features</a>
+<li><a href="#distributions">Distributions</a>
+<li><a href="#building">Building from Source Code in the Community Edition</a>
+<li><a href="#issues">Known Issues</a>
+</ul>
+<h2><a name="overview">Overview</a></h2>
+<p>
+Oracle NoSQL Database is a distributed key-value store capable of scaling
+horizontally to handle very large amounts of data.
+</p>
+<p>
+The Oracle NoSQL Database server is compatible with Java SE 8 (64-bit),
+and the client is compatible with Java SE 8. Both the client and server
+have been tested and certified against Oracle Java SE 8 Update 161.  We
+encourage you to upgrade to the latest Java 8 release to take advantage
+of the latest bug fixes and performance improvements.  We expect to
+certify Oracle NoSQL Database with more recent Java major versions in a
+future release.
+</p>
+<p>
+Attempting to use this release with a version of Java earlier than the
+required version will produce an error message similar to:
+</p>
+<blockquote>
+<pre>
+Exception in thread "main" java.lang.UnsupportedClassVersionError:
+  oracle/kv/impl/util/KVStoreMain : Unsupported major.minor version 52.0
+</pre>
+</blockquote>
+<h2><a name="release">This Release</a></h2>
+<p>
+This is release 18.1.19 Community Edition of Oracle NoSQL Database.  It follows
+major release 4.0.9 and minor release 18.1.13.
+</p>
+<h3>Differences between 18.1.19 Community Edition and Release 18.1.13</h3>
+<p>
+Release 18.1.19 Community Edition of Oracle NoSQL Database is a patch
+release. We strongly recommend that users of earlier versions upgrade to
+this release.  For a complete listing of all the changes made to Oracle
+NoSQL Database for this release (including all bug fixes) see
+the <a href="changelog.html">change log</a>.
+</p>
+<h2><a name="features">New Features</a></h2>
+<!-- Descriptions major features for the initial major release and
+     subsequent minor releases, in reverse order -->
+<h3>New in Release 18.1</h3>
+<H4>Support for Group-by and Aggregate Function</h4>
+<p>
+This release introduces support for the group-by clause and the
+following aggregate functions: count(*), count(expr), sum(expr),
+avg(expr), min(expr) and max (expr).
+</p>
+<H4>Joining Tables in the Same Table Hierarchy</h4>
+<p>
+Support for joining tables that belong to the same table hierarchy &mdash;
+parent-child table joins &mdash; is now available.
+</p>
+<H4>Zone Affinity</h4>
+<p>
+Users can specify master affinity for the primary zones that are in
+close proximity to the client application. This feature allows the
+system to favor placing master nodes in primary zones that have master
+affinity set so that write operations are directed to nearby zones for
+more predictable latency.
+</p>
+<h3>New in Release 4.5</h3>
+<H4>Introducing Streaming API for tables</h4>
+<p>
+Oracle NoSQL Database provides a Streams API that allows users to
+subscribe to changes made to tables by puts, updates and deletes. This
+new API is based on the Reactive Streams standard
+(http://www.reactive-streams.org).  Applications that use the Stream API
+need to be compiled with Java SE Development Kit 8, and
+require <code>kvstore.jar</code> for both compilation and at runtime.
+</p>
+<H4>Introducing C# Driver</h4>
+<p>
+The Oracle NoSQL Database C# driver allows native C# applications to access data
+stored in Oracle NoSQL Database tables using the
+basic <code>get</code>, <code>put</code>, and <code>search</code>
+operations.
+</p>
+<H4>Support for UPDATE in SQL query</h4>
+<p>
+Added UPDATE statement support to perform single-row server-side updates
+with SQL. The UPDATE command syntax supports the standard SET clause, as
+well as extensions to support ADD, REMOVE and PUT clauses for adding and
+removing elements and fields to/from arrays and maps. The existing
+Oracle NoSQL Database path expression can be used to identify the target fields
+to update both inside JSON datatype or in the strongly typed datatypes.
+</p>
+<H4>Disk usage enforcement using storage directory size parameter</h4>
+<p>
+The storage directory size parameter is now used to enforce disk
+usage. Starting with this release, if the storage disk size is not
+specified for replication nodes (RNs), the Oracle NoSQL Database storage
+engine may use all available free disk space except for 5GB of reserved
+free space. We strongly recommend that all applications:
+<ul>
+<li>Specify storage directories and sizes for all RNs, and
+<li>Monitor disk usage using the new availableLogSize statistic and
+take correction action well before this value reaches zero.
+</ul>
+<p>
+Write operations will be rejected and only read operations will be allowed
+when the storage size is in danger of being exceeded.
+</p>
+<H4>5GB minimum disk space requirement </h4>
+<p>
+Starting with this release, a minimum of 5GB disk space is required for the
+<code>kvlite</code> and <code>kvstore</code> service to start.
+</p>
+<h3>New in Release 4.4</h3>
+<H4>Introducing indexing capability for JSON data</h4>
+<p>
+Starting this release, Oracle NoSQL Database supports typed JSON
+indexes. The user can create an index on a field that is of JSON
+datatype. A type (string, numeric,..) must be specified for a
+JSON index and the system enforces the semantics for that type
+during SQL query processing.
+</p>
+<H4>SQL for NoSQL Enhancements</h4>
+<p>
+Added support for NUMBER datatype and all query expressions that work
+on numeric values have been extended to work on NUMBER. Added support
+for IS NULL and IS NOT NULL operators in SQL for NoSQL.
+</p>
+<h3>New in Release 4.3</h3>
+<H4>Oracle NoSQL Database Community Edition (CE) License Change</h4>
+<p>
+ Oracle NoSQL Database server Community Edition (CE) is now released
+ under Apache License, Version 2.0 (Apache 2.0). Previously it was
+ released under the Affero General Public License (aGPL v3). The
+ licenses for the other distributions are unchanged.
+</p>
+<h4>Oracle NoSQL Database will create secure stores by default</h4>
+<p>
+Starting this release, Oracle NoSQL Database will create all stores as
+secure stores by default, including those created by
+<code>kvlite</code>. The user will have to set
+the <code>-store-security</code> option to <code>none</code> in
+the <code>makebootconfig</code> to create non-secure
+stores. For <code>kvlite</code>, use <code>-secure-config disable</code>
+option to create non-secure store.
+</p>
+<h4>Support for querying JSON data type fields</h4>
+<p>
+SQL for Oracle NoSQL Database now supports querying and manipulating
+data stored as JSON data types in its DML queries. Creating and storing
+fields of type JSON was introduced in the previous release as a preview
+and is now made available as general release. Indexed JSON queries are
+not supported in this release and as a result some queries may experience
+performance issues.
+</p>
+<h4>Introducing TIMESTAMP data type</h4>
+<p>
+Users can create a table of type TIMESTAMP using the TABLE API and can
+query fields of type TIMESTAMP using the SQL for Oracle NoSQL query
+language.
+</p>
+<h4>Storage Engine (JE) Stats available through JMX</h4>
+<p>
+Storage Engine (JE) statistics that are written to the
+&lt;kvroot>/log/&lt;storename&gt;.stats and
+&lt;kvroot&gt;/log/&lt;storename&gt;.perf files are now made available
+through the Oracle NoSQL JMX agent via the standard
+javax.management.Notification mechanism in JSON format. This allows
+users to make a single call to obtain all the JE stats for a particular
+component as opposed to a call for every JE stat.
+</p>
+<h4>Increased parallelism in Predicate Push Down</h4>
+<p>
+The Predicate Push Down feature has been enhanced so that when the input
+splits are generated (on the client side), partition and shard
+information is now employed to produce splits that are distributed to
+the Datanodes of the Hadoop cluster. This enhancement results in optimum
+parallelization of the predicate filtering that is performed on the
+Oracle NoSQL Database server.
+</p>
+<h4>Removal of SNMP monitoring and the web-based Admin console</h4>
+<p>
+With this release, Oracle NoSQL Database no longer supports monitoring
+via SNMP, nor does it provide a web-based console for directly
+monitoring a store with a web browser.  JMX monitoring is still
+supported.
+</p>
+<h3>New in Release 4.2</h3>
+<h4>Storage Directory Based Topology Layout</h4>
+<p>
+Topology layout now takes storage directory size information into
+account.  If storage directory sizes have been specified for Storage
+Nodes, then the deploy, rebalance, redistribute, and contract topology
+commands will adjust shards and partitions to take directory sizes into
+account.
+</p>
+<h4>Improved Write Availability With RF=2</h4>
+<p>
+Stores with replication factor 2 can now continue to support writes
+after single node failures if the store includes Arbiter nodes, a new
+type of lightweight node that allows the system to select a master if
+one of the two replication nodes in a shard becomes unavailable.
+Arbiters can be used to improve availability without increasing the
+number of data replicas maintained by the store.
+</p>
+<h4>Store Contraction</h4>
+<p>
+The new <code>topology contract</code> command makes it possible to
+reduce the size of a store by eliminating storage nodes and reducing the
+number of shards.  The replication factor is not changed.
+</p>
+<h4>General Release of Query and Full Text Search</h4>
+<p>
+The query language and full text search are now general release
+features.
+</p>
+<h4>Preview release of API support for a JSON data type</h4>
+<p>
+Limited support for declaring and using a JSON data type is provided
+as a preview release. See the
+<a href="changelog.html">change log</a> for  more information.
+</p>
+<h3>New in Release 4.0</h3>
+<h4>Query</h4>
+<p>
+Added a preview release of an SQL-style declarative query language to
+support server side predicates, filtering, and projection of table
+data. The new features include the language itself, APIs for querying
+and results handling, as well as a new interactive shell to exercise
+queries.
+</p>
+<h4>Full Text Search</h4>
+<p>
+Added a preview release of integration with Elasticsearch to provide
+full text search indexing.  Text indexes can be added to tables in
+Oracle NoSQL Database, which will cause a corresponding index in an
+attached Elasticsearch cluster to be populated and maintained.
+</p>
+<h4>TTL</h4>
+<p>
+Added support for Time-To-Live (TTL), which allows applications to
+request automatic purging of records after a given time interval.  A
+default TTL can be specified for all entries in a table, and a TTL value
+can also be specified for individual table operations.  For applications
+whose data should expire over time, the TTL feature provides better
+performance than deleting records explicitly.
+</p>
+<h4>Export/Import Utility</h4>
+<p>
+Added Export and Import utilities. The new utilities allows users to
+export the contents from Oracle NoSQL Database store to either the local
+file system or to the Oracle Storage Cloud Service, and to import
+contents from the locations into an Oracle NoSQL Database store.
+</p>
+<h2><a name="distributions">Distributions</a></h2>
+<p>
+    Oracle NoSQL Database comes in four distributions:
+    Community Edition (CE), Enterprise Edition (EE), Basic Edition (BE),
+    and Client.
+</p>
+<p>
+    The CE version is open source. It ships with source code and is
+    released under the Apache License, Version 2.0 (Apache 2.0). It
+    includes the client and server distribution, but does not include
+    some server features.
+</p>
+<p>
+    The EE version does not include source code and it ships with an
+    Oracle license. The EE version includes the client and server
+    distribution, and includes several features not found in the CE
+    version: Oracle External Tables support, Oracle Wallet support for
+    external password storage, and support for Kerberos authentication.
+</p>
+<p>
+    The BE version only contains the server and is distributed under the
+    Oracle Database Enterprise Edition license. The BE version does not
+    include source code, and is functionally identical to CE.
+</p>
+<p>
+    The Client version is open source. It ships with source code and is
+    released under the Apache 2.0 License (Apache 2.0).  The Client
+    version only contains the implementation of the client API, which
+    may be used to access servers running under CE, EE, or BE.
+</p>
+<p>
+  In addition, example code is provided in its own package, which can be
+  used with any of the three main distributions.
+</p>
+<h2><a name="building">Building from Source Code in the Community
+Edition</a></h2>
+<p>
+If you have downloaded the Community Edition, you can use the included
+Ant build script to rebuild JAR files if you make source changes.
+</p>
+<p>
+You need Apache Ant version 1.9.0 or later in order to do builds.  You
+can download Ant from:
+</p>
+<blockquote>
+http://ant.apache.org/
+</blockquote>
+<p>
+You also need Apache Ivy for loading dependencies.  You can download Ivy
+from:
+</p>
+<blockquote>
+http://ant.apache.org/ivy/
+</blockquote>
+<p>
+Make sure to add the ivy JAR file to your <tt>~/.ant/lib</tt> directory
+or specify the ivy directory using the ant <tt>-lib</tt> option.
+</p>
+<p>
+The default Ant target will rebuild all JAR files.
+</p>
+<h2><a name="issues">Known Issues</a></h2>
+<h3>Memory Allocation Algorithm Fails to Account for Java Memory
+  Overhead, Can Produce OutOfMemoryErrors</h3>
+<p>
+The automatic memory allocation algorithm in NoSQL Database currently
+fails to account correctly for the additional memory that the Java
+virtual machine uses beyond the requested maximum heap size.  The
+additional memory usage varies depending on the application, but a 25%
+overhead is probably common.
+</p>
+<p>
+To achieve the recommended standard memory allocation, which uses up to
+85% of memory for Java virtual machines running replication nodes,
+reserves 10% for the operating system, and uses the remaining 5% or more
+for the off-heap cache, make the changes to SN parameters described
+below.
+</p>
+<p>
+The changes to make depend on the amount of memory available and the
+capacity of the SN, that is, the number of RNs it supports.
+</p>
+<p>
+The first set of changes applies to hosts with less than 48 GB of memory
+for each RN its SN supports.
+</p>
+<table border="1"
+       summary="Table of capacity and memory values">
+<caption><i>Capacity and Memory Table</i></caption>
+<thead>
+<tr><th>Capacity<th>Memory
+<tbody>
+<tr><td>1<td>48 GB
+<tr><td>2<td>96 GB
+<tr><td>3<td>144 GB
+<tr><td>4<td>192 GB
+</table>
+<p>
+For configurations with less than the amount of memory specified in the
+Capacity and Memory table, set the memoryMB and rnHeapPercent SN
+parameters as follows:
+</p>
+<ol>
+<li>Set memoryMB to 81% of the total available memory
+<li>Set rnHeapPercent to 84%
+</ol>
+<p>
+Note that we are using the GB and MB units to mean that 1 GB = 1000 MB.
+</p>
+<p>
+For a new store, you can specify the value of the memoryMB parameter by
+using the -memory_mb flag to the <code>makebootconfig</code> utility
+command.  For information about this utility command, see
+<a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/other-databases/nosql-database/18.1&id=NSADM-GUID-527622CE-F114-43F6-9012-AB245621DA00">
+Utility Command Reference: makebootconfig</a>.
+</p>
+<p>
+For general directions on how to set parameters, see
+<a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/other-databases/nosql-database/18.1&id=NSADM-GUID-B6F7AE32-DD5D-4F6A-A4F6-BC576A10C2A0">
+Setting Store Parameters</a>.
+</p>
+<p>
+For information on particular SN parameters, see
+<a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/other-databases/nosql-database/18.1&id=NSADM-GUID-E5F09161-ABD3-4F8A-8EF8-26271EB82116">
+Storage Node Parameters</a>.
+</p>
+<p>
+For example, on a machine with 16 GB of memory, set the memoryMB
+parameter to:
+</p>
+<pre>
+  memoryMB = totalMemory * 0.81
+           = 16000 * 0.81
+           = 12960
+</pre>
+<p>
+Also set the rnHeapPercent parameter to 84.
+</p>
+<p>
+For a new store, you can use the <code>makebootconfig</code> utility
+command with the -memory_mb flag to set the memoryMB parameter when
+deploying each SN, for example:
+</p>
+<pre>
+  java -Xms64m -Xmx64m -jar KVHOME/lib/kvstore.jar makebootconfig \
+       -root mykvroot -host myhost -port 5000 -harange 5010,5012 \
+       -memory_mb 12960
+</pre>
+<p>
+To set the rnHeapPercent parameter, you can specify the new value as a
+policy parameter prior to deploying any of the SNs, which will cause the
+new value to be used, by default, for all SNs.  You do this with the
+<code>runadmin</code> utility command, using the change-policy CLI
+command after deploying the store's zones and before deploying the SNs.
+For example:
+</p>
+<pre>
+  java -Xms64m -Xmx64m -jar KVHOME/lib/kvstore.jar runadmin \
+       -host myhost -port 5000
+  [...]
+  kv-> plan deploy-zone -name zone1 -rf 3 -wait
+  kv-> change-policy -params rnHeapPercent=84
+  kv-> plan deploy-sn -znname zone1 -host myhost -port 5000 -wait
+  [...]
+</pre>
+<p>
+For an existing store, you can use the <code>runadmin</code> utility
+command to change these parameters for each storage node.  For example,
+to change the settings for sn1:
+</p>
+<pre>
+  java -jar KVHOME/lib/kvstore.jar runadmin \
+       -host myhost -port 5000 -security ~/login-properties \
+       plan change-parameters -wait -service sn1 \
+            -params memoryMB=12960 rnHeapPercent=84
+</pre>
+<p>
+Then, whenever a new storage node is added, you can use either the
+makebootconfig and change-policy approach, or the change-parameters one,
+to update the new node's parameters.
+</p>
+<p>
+With these new parameter settings in place, if the storage node has a
+capacity of 1, the Java maximum heap size for the RN will be set to:
+</p>
+<pre>
+  javaHeap = memoryMB * 0.84
+           = 12.96 GB * 0.84
+           = 10.89 GB
+</pre>
+<p>
+With a 25% memory overhead, the amount of memory the Java virtual
+machine will use will be:
+</p>
+<pre>
+  totalJavaMemory = javaHeap * 1.25
+                  = 10.89 * 1.25
+                  = 13.61 GB
+</pre>
+<p>
+That produces the following memory allocation:
+</p>
+<table border="1"
+       summary="Table of memory amounts and uses">
+<thead>
+<tr><th>Size<th>Usage
+<tbody>
+<tr><td>13.61 GB<td>Java memory usage
+<tr><td>0.77 GB<td>Off-heap cache
+<tr><td>1.62 GB<td>System
+<tr><td>16.00 GB<td>Total
+</table>
+<p>
+Note that the memoryMB parameter limits the total amount of memory used
+by the Java virtual machines for all RNs for the SN.  Setting the
+memoryMB parameter to 81% of the total memory will correctly limit the
+total Java memory size even if the SN supports multiple RNs because it
+has a capacity greater than 1.
+</p>
+<p>
+The second set of changes applies to hosts with 48 GB or more of memory
+for each RN.
+</p>
+<p>
+For configurations with more than the amount of memory specified in the
+Capacity and Memory Table, set the memoryMB and systemPercent SN
+parameters as follows.
+</p>
+<ol>
+<li>Set memoryMB to totalMemoryInMB - (8000 * capacity)
+<li>Set systemPercent to (10 * totalMemory) / (totalMemory - (8 * capacity))
+</ol>
+<p>
+The default setting of rnHeapPercent (85) should be used.
+</p>
+<p>
+For example, on a machine with 48 GB of memory and an SN capacity of 1,
+set the memoryMB parameter to:
+</p>
+<pre>
+  memoryMB = totalMemory - (8000 * capacity)
+           = 48000 - (8000 * 1)
+           = 40000
+</pre>
+<p>
+Also set the systemPercent parameter to:
+</p>
+<pre>
+  systemPercent = (10 * totalMemory) / (totalMemory - (8 * capacity))
+                = (10 * 48) / (48 - (8 * 1))
+                = 480 / 40
+                = 12
+</pre>
+<p>
+As with rnHeapPercent, systemPercent is a policy parameter, so it can be
+set for all SNs by using the change-policy CLI command if all SNs are
+configured the same way, or else should be set to the appropriate value
+on each SN.
+</p>
+<p>
+Those parameter settings produce the following memory allocation:
+</p>
+<table border="1"
+       summary="Table of memory amounts and uses">
+<thead>
+<tr><th>Size<th>Usage
+<tbody>
+<tr><td>40.00 GB<td>Java memory usage
+<tr><td>3.20 GB<td>Off-heap cache
+<tr><td>4.80 GB<td>System
+<tr><td>48.00 GB<td>Total
+</table>
+<p>
+For one more example, on a machine with 192 GB of memory and an SN
+capacity of 3, set the memoryMB parameter to:
+</p>
+<pre>
+  memoryMB = totalMemory - (8000 * capacity)
+           = 192000 - (8000 * 3)
+           = 192000 - 24000
+           = 168000
+</pre>
+<p>
+Also set the systemPercent parameter to:
+</p>
+<pre>
+  systemPercent = (10 * totalMemory) / (totalMemory - (8 * capacity))
+                = (10 * 192) / (192 - (8 * 3))
+                = 1920 / 168
+                = 11.4
+</pre>
+<p>
+Those parameter settings produce the following memory allocation:
+</p>
+<table border="1"
+       summary="Table of memory amounts and uses">
+<thead>
+<tr><th>Size<th>Usage
+<tr><td>120.00 GB<td>Java memory usage
+<tr><td>52.85 GB<td>Off-heap cache
+<tr><td>19.15 GB<td>System
+<tr><td>192.00 GB<td>Total
+</table>
+<p>
+[#26210]
+</p>
+<h3>Need a minimum of 5GB of free disk space to deploy a storage node
+  that hosts an admin</h3>
+<p>
+If a Storage Node that hosts an admin is deployed on a system with less
+than 5GB of free disk space, the following exception will occur:
+</p>
+<pre>
+Connected to Admin in read-only mode
+(JE 18.1.8) Database AdminSchemaVersion not found. (18.1.3)
+</pre>
+<p>
+Make sure you have at least 5GB of free disk space to successfully
+deploy a storage node.  This same problem will occur when deploying
+KVLite.  We expect to remove this restriction in a future release.
+</p>
+[#26818]
+<h3>Storage directory size may be incorrect when migrating a storage node</h3>
+<p>
+When migrating a storage node (SN) make sure that the target SN has
+a directory size that is equal to or greater than the source SN.
+The system currently does not make this check and the target SN may
+have the wrong storage directory size. This is a bug that
+will be fixed in a later release. You can do
+</p>
+<pre>
+  show parameters -service snX
+</pre>
+<p>
+on the source SN and target SN to determine the directory size.
+</p>
+<p>
+[#26918]
+</p>
+<h3>Users must manage Admin directory size, can put all admins into
+  "RUNNING,UNKNOWN" state</h3>
+<p>
+Starting with the 4.5.x release, every Admin is allocated a maximum of 3
+GB of disk space by default, which is sufficient space for the vast
+majority of installations. However, under some rare circumstances you
+might want to change this 3 GB limit, especially if the Admin is sharing
+a disk with a Storage Node. For more information, see
+<a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/other-databases/nosql-database/18.1&id=GUID-3EB45F79-15F6-4300-A82B-1F23B9906DE6">
+Oracle NoSQL Database Admistrative's Guide: Managing Admin Directory
+Size</a>.
+</p>
+<p>
+If Admins run out of disk space, then there will be entries in the Admin
+logs saying "Disk usage is not within je.maxDisk or je.freeDisk limits
+and write operations are prohibited" and the output of the ping command
+will show all the Admins in the "RUNNING,UNKNOWN" state. Follow the
+procedure described in
+<a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/other-databases/nosql-database/18.1&id=GUID-3EB45F79-15F6-4300-A82B-1F23B9906DE6">
+Oracle NoSQL Database Admistrative's Guide: Managing Admin Directory
+Size</a> to bring the Admins back to the "RUNNING,MASTER" or
+"RUNNING,REPLICA" state.
+</p>
+<p>
+Below is sample output of the ping command and log entries that indicate
+that Admin ran out of disk space.
+</p>
+<pre>
+kv-> ping
+Connected to Admin in read-only mode
+Pinging components of store kvstore based upon topology sequence #106
+90 partitions and 3 storage nodes
+Time: 2018-04-03 08:20:22 UTC   Version: 18.3.0
+Shard Status: healthy:3 writable-degraded:0 read-only:0 offline:0 total:3
+Admin Status: read-only
+Zone [name=Houston id=zn1 type=PRIMARY allowArbiters=false masterAffinity=false]
+    RN Status: online:9 offline:0 maxDelayMillis:0 maxCatchupTimeSecs:0
+Storage Node [sn1] on localhost:10000
+    Zone: [name=Houston id=zn1 type=PRIMARY allowArbiters=false masterAffinity=false]
+    Status: RUNNING   Ver: 18.3.0 2018-04-03 05:36:25 UTC  Build id: ec627ef967d6 Edition: Enterprise
+        Admin [admin1]          Status: RUNNING,UNKNOWN
+        Rep Node [rg1-rn1]      Status: RUNNING,REPLICA sequenceNumber:93 haPort:10011 delayMillis:0 catchupTimeSecs:0
+        Rep Node [rg2-rn1]      Status: RUNNING,REPLICA sequenceNumber:93 haPort:10012 delayMillis:0 catchupTimeSecs:0
+        Rep Node [rg3-rn1]      Status: RUNNING,MASTER sequenceNumber:92 haPort:10013
+Storage Node [sn2] on localhost:11000
+    Zone: [name=Houston id=zn1 type=PRIMARY allowArbiters=false masterAffinity=false]
+    Status: RUNNING   Ver: 18.3.0 2018-04-03 05:36:25 UTC  Build id: ec627ef967d6 Edition: Enterprise
+        Admin [admin2]          Status: RUNNING,UNKNOWN
+        Rep Node [rg1-rn2]      Status: RUNNING,REPLICA sequenceNumber:93 haPort:11021 delayMillis:0 catchupTimeSecs:0
+        Rep Node [rg2-rn2]      Status: RUNNING,MASTER sequenceNumber:93 haPort:11022
+        Rep Node [rg3-rn2]      Status: RUNNING,REPLICA sequenceNumber:92 haPort:11023 delayMillis:0 catchupTimeSecs:0
+Storage Node [sn3] on localhost:12000
+    Zone: [name=Houston id=zn1 type=PRIMARY allowArbiters=false masterAffinity=false]
+    Status: RUNNING   Ver: 18.3.0 2018-04-03 05:36:25 UTC  Build id: ec627ef967d6 Edition: Enterprise
+        Admin [admin3]          Status: RUNNING,UNKNOWN
+        Rep Node [rg1-rn3]      Status: RUNNING,MASTER sequenceNumber:93 haPort:12011
+        Rep Node [rg2-rn3]      Status: RUNNING,REPLICA sequenceNumber:93 haPort:12012 delayMillis:0 catchupTimeSecs:0
+        Rep Node [rg3-rn3]      Status: RUNNING,REPLICA sequenceNumber:92 haPort:12013 delayMillis:0 catchupTimeSecs:0
+
+2018-04-03 08:18:52.254 UTC SEVERE [admin1] JE: Disk usage is not within
+je.maxDisk or je.freeDisk limits and write operations are prohibited:
+maxDiskLimit=2,097,152 freeDiskLimit=5,368,709,120
+adjustedMaxDiskLimit=2,097,152 maxDiskOverage=83,086
+freeDiskShortage=-6,945,071,104 diskFreeSpace=12,313,780,224
+availableLogSize=-83,086 totalLogSize=2,180,238 activeLogSize=2,180,238
+reservedLogSize=0 protectedLogSize=0 protectedLogSizeMap={}
+
+2018-04-03 08:19:34.808 UTC SEVERE [admin2] JE: Disk usage is not within
+je.maxDisk or je.freeDisk limits and write operations are prohibited:
+maxDiskLimit=2,097,152 freeDiskLimit=5,368,709,120
+adjustedMaxDiskLimit=2,097,152 maxDiskOverage=97,346
+freeDiskShortage=-6,944,923,648 diskFreeSpace=12,313,632,768
+availableLogSize=-97,346 totalLogSize=2,194,498 activeLogSize=2,194,498
+reservedLogSize=0 protectedLogSize=0 protectedLogSizeMap={}
+
+2018-04-03 08:19:36.063 UTC SEVERE [admin3] JE: Disk usage is not within
+je.maxDisk or je.freeDisk limits and write operations are prohibited:
+maxDiskLimit=2,097,152 freeDiskLimit=5,368,709,120
+adjustedMaxDiskLimit=2,097,152 maxDiskOverage=101,698
+freeDiskShortage=-6,944,923,648 diskFreeSpace=12,313,632,768
+availableLogSize=-101,698 totalLogSize=2,198,850 activeLogSize=2,198,850
+reservedLogSize=0 protectedLogSize=0 protectedLogSizeMap={}
+</pre>
+[#26922]
+<h3>Command history functionality does not work</h3>
+<p>
+The command history functionality does not work in Admin CLI and
+SQL consoles in this release. This is due to an incompatibility with
+the jline 3.x library. To get the same functionality as previous
+releases, replace the jline.jar that comes with the
+Oracle NoSQL Database 18.1.x package with the open source jline-2.14.6.jar.
+</p>
+<p>
+For example:
+</p>
+<pre>
+curl -o $KVHOME/lib/jline.jar http://repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar
+</pre>
+[#26941]
+<h3>Store with Full Text Search may become unsynchronized</h3>
+<p>
+A store that has enabled support for Full Text Search may, on rare
+occasions, encounter a bug in which internal components of a master
+Replication Node become unsynchronized, causing updates from that
+Replication Node to stop flowing to the Elasticsearch engine.  This
+problem will cause data to be out of sync between the store and
+Elasticsearch.
+</p>
+<p>
+When the problem occurs, the Elasticsearch indices stop being populated.
+The problem involves the shutdown of the feeder channel for a component
+called the TextIndexFeeder, and is logged in the debug logs for the
+Replication Node.  For example:
+</p>
+<pre>
+2018-03-16 11:23:46.055 UTC INFO [rg1-rn1] JE: Inactive channel: TextIndexFeeder-rg1-rn1-b4e92291-3c73-4128-9557-62dbd4e9ac78(2147483647) forced close. Timeout: 10000ms.
+2018-03-16 11:23:46.059 UTC INFO [rg1-rn1] JE: Shutting down feeder for replica TextIndexFeeder-rg1-rn1-b4e92291-3c73-4128-9557-62dbd4e9ac78 Reason: null write time:  32ms Avg write time: 100us
+2018-03-16 11:23:46.060 UTC INFO [rg1-rn1] JE: Feeder Output for TextIndexFeeder-rg1-rn1-b4e92291-3c73-4128-9557-62dbd4e9ac78 soft shutdown initiated.
+2018-03-16 11:23:46.064 UTC WARNING [rg1-rn1] internal exception Expected bytes: 6 read bytes: 0
+com.sleepycat.je.utilint.InternalException: Expected bytes: 6 read bytes: 0
+    at com.sleepycat.je.rep.subscription.SubscriptionThread.loopInternal(SubscriptionThread.java:719)
+    at com.sleepycat.je.rep.subscription.SubscriptionThread.run(SubscriptionThread.java:180)
+Caused by: java.io.IOException: Expected bytes: 6 read bytes: 0
+    at com.sleepycat.je.rep.utilint.BinaryProtocol.fillBuffer(BinaryProtocol.java:446)
+    at com.sleepycat.je.rep.utilint.BinaryProtocol.read(BinaryProtocol.java:466)
+    at com.sleepycat.je.rep.subscription.SubscriptionThread.loopInternal(SubscriptionThread.java:656)
+    ... 1 more
+
+2018-03-16 11:23:46.064 UTC INFO [rg1-rn1] SubscriptionProcessMessageThread soft shutdown initiated.
+2018-03-16 11:23:46.492 UTC INFO [rg1-rn1] JE: Feeder output for TextIndexFeeder-rg1-rn1-b4e92291-3c73-4128-9557-62dbd4e9ac78 shutdown. feeder VLSN: 4,066 currentTxnEndVLSN: 4,065
+</pre>
+<p>
+If the TextIndexFeeder channel is shutdown, then the user can restore it
+by creating a dummy full text search index.  Here is an example of how
+you can do that.
+</p>
+<p>
+Assuming that Elasticsearch is already registered, execute the
+following commands from the Admin CLI:
+</p>
+<pre>
+execute 'CREATE TABLE dummy (id INTEGER,title STRING,PRIMARY KEY (id))'
+
+execute 'CREATE FULLTEXT INDEX dummytextindex ON dummy (title)'
+
+execute 'DROP TABLE dummy'
+</pre>
+<p>
+Note that <i>dummy</i> is the name of a temporary table that should not
+exist previously.
+</p>
+<p>
+Creating a full text search index reestablishes the channel from the
+store to Elasticsearch and ensures that data is synced up to date.
+</p>
+[#26859]
+<h3>Key Distribution Statistics Utility is disabled by default </h3>
+<p>
+Prior to 4.5.x release, Oracle NoSQL Database server automatically
+gathered key distribution statistics for its tables as the Key
+Distribution Statistics Utility was enabled by default. Depending on the
+frequency at which the statistics are gathered and the size of the
+store, the gathering of statistics can cause the throughput of the
+system can drop. Therefore, starting 4.5.x release, the Key Distribution
+Statistics Utility will be disabled by default for all newly created
+stores. Note that the utility will remain enabled for stores upgrading
+to 4.5.x. The user can issue the following command to disable the
+utility:
+</p>
+<pre>
+plan change-parameters -wait -all-rns -params "rnStatisticsEnabled=false"
+change-policy -params rnStatisticsEnabled=false
+</pre>
+<h3>Data Verifier is disabled by default </h3>
+<p>
+Starting 4.5.x, the data verifier is turned off by default. This change
+was made because, in some cases, the data verifier was using a lot of
+I/O bandwidth and causing the system to slow down. Users can turn on the
+data verifier by issuing the following two commands from the Admin CLI:
+</p>
+<pre>
+plan change-parameters -wait -all-rns -params "configProperties=je.env.runVerifier=false"
+
+change-policy -params "configProperties=je.env.runVerifier=false"
+</pre>
+<p>
+Note that, if the store has services with preexisting settings for the
+configProperties parameter, then users will need to get the current
+values and merge them with the new setting to disable the verifier:
+</p>
+<pre>
+show param -service rg1-rn1
+show param -policy
+</pre>
+<p>
+For example, suppose rg1-rn1 has set the following cleaner parameter:
+</p>
+<pre>
+kv-> show param -service rg1-rn1
+[...]
+configProperties=je.cleaner.minUtilization=40
+</pre>
+<p>
+When updating the configProperties parameter, the new setting for the verifier
+should be added, separating the existing settings with semicolons:
+</p>
+<pre>
+plan change-parameters -wait -all-rns -params "configProperties=je.cleaner.minUtilization=40;je.env.runVerifier=false"
+</pre>
+<h3>AdminFaultException during partition migration operation</h3>
+<p>
+Topology operations that expand or contract the store are not supported
+when active subscribers are streaming data from the store using the
+Streams API. During the partition migration phase of the topology
+operation, the system raises a AdminFaultException if it detects active
+subscribers.  The details of the exception are logged as a WARNING in
+the logs and will read as follows:
+</p>
+<pre>
+Request to migrate &lt;partitionId&gt; was rejected because the node is part of a streaming subscription
+</pre>
+[#26171]
+<h3>Misleading ping output when system is in read-only mode because of out of disk space</h3>
+<p>
+When a replication node is out of disk space, the system gets into a mode
+that only allows read operations. When the system is in this read-only mode,
+the <code>ping</code> output may show the shard status as being
+<code>offline</code> when it is actually in read-only mode. The user can tell
+if the system is in read-only mode if ping output has replication node status
+set to RUNNING, UNKNOWN and master status set to RUNNING and the show topology
+output has MASTER (non-authoritative).
+</p>
+[#26469]
+<h3>Subscription cannot connect and fails with InternalException</h3>
+<p>
+If a master transfer occurs due to a failure after the publisher is started
+and before a subscriber connects, an <code>InternalException</code>
+can occur when the subscriber tries to connect. The exception message
+will read "Failed to connect, will retry after sleeping 3000 ms". Restart
+the publisher to work around this problem.
+</p>
+[#26431]
+<h3>Error when querying an index on array or map datatype</h3>
+<p>
+An exception occurs when a query accesses an index that was created
+on an array or map column from a table that has a primary key column
+of NUMBER or TIMESTAMP datatype. To work around the exception, the
+user can use the hints feature described in SQL for Oracle NoSQL
+Database so the query processor can avoid that index. Here is an
+example of the SQL statements that can cause this problem.
+</p>
+<pre>
+create table foo (a timestamp, array array(int), primary key(a))
+create index idx on foo (array[])
+select * from foo where array[] >any 10
+</Pre>
+[#26460]
+<h3>Performance overhead for secure store </h3>
+<p>
+Changed the SSL cipher suites preference order to favor suites using
+GCM cipher algorithm mode if no user-specified cipher suite is configured.
+In our testing, we have found that suites using the GCM cipher algorithm
+mode provide better performance than suites using CBC mode, particularly
+on hardware with limited sources of secure randomness.  Note, though,
+that performance may depend on the workload and hardware configuration.
+</p>
+<font size="1">Copyright (c) 1996, 2018 Oracle and/or its affiliates.  All rights reserved.</font>
+</div>
+<!-- end docMain -->
+</body>
+</html>

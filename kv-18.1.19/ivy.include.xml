@@ -1,0 +1,57 @@
+<!-- ======================================================================
+Imported targets to handle usenames and ssh for access to the Ivy repository
+on sleepycat-scm.us.oracle.com.  This file is imported by build.xml and
+updatelibs.xml.  Important properties:
+ivy.user - username on repository machine
+ivy.keyfile - path to ssh keyfile on local machine
+ivy.keypassword - pass phrase for keyfile ("" if none)
+======================================================================== -->
+<project>
+
+  <!-- Whether to check ssh parameters -->
+  <condition property="do-ssh">
+    <and>
+      <isset property="do-retrieve"/>
+      <isset property="internal.build"/>
+    </and>
+  </condition>
+
+  <!-- ssh authentication defaults -->
+  <property name="default.keyfile" value="${user.home}/.ssh/id_dsa"/>
+  <property name="ivy.host" value="sleepycat-scm.us.oracle.com"/>
+  <property name="ivy.port" value="22"/>
+
+  <!-- default user name if not overridden -->
+  <target name="get-user" unless="${ivy.user}">
+    <property name="ivy.user" value="${user.name}"/>
+  </target>
+
+  <target name="default-keyfile" unless="${ivy.keyfile}">
+    <available property="defaultkeyfile" file="${default.keyfile}"/>
+  </target>
+
+  <target name="set-keyfile" if="${defaultkeyfile}">
+    <property name="ivy.keyfile" value="${default.keyfile}"/>
+  </target>
+
+  <!-- prompt for path to ssh keyfile if not already set -->
+  <target name="get-keyfile" if="do-ssh" unless="${ivy.keyfile}">
+    <input message="Enter absolute path to ssh keyfile for host ${ivy.host}:"
+	   addproperty="ivy.keyfile"/>
+  </target>
+
+  <!-- prompt for optional pass phrase on keyfile -->
+  <target name="check-keyfile" depends="keyfile-exists"
+	  if="do-ssh" unless="${ivy.keypassword}">
+    <input message="Enter password for keyfile ${ivy.keyfile} or if none, return:"
+	   addproperty="ivy.keypassword">
+      <handler type="secure"/>
+    </input>
+  </target>
+
+  <!-- prompt for optional pass phrase on keyfile -->
+  <target name="keyfile-exists" if="do-ssh">
+    <available property="havekeyfile" file="${ivy.keyfile}"/>
+    <fail unless="havekeyfile">Can't find keyfile: ${ivy.keyfile}</fail>
+  </target>
+</project>

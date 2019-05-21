@@ -1,0 +1,28 @@
+# Example script that creates the the Persons table and each persons 
+# insurance quotes received and imports 
+# data from jsonpersons.json and jsonpersons.quotes.json 
+# in order to follow along the advanced 
+# query examples in the Getting Started with SQL for Oracle NoSQL
+# Database book.
+#
+# To run the script, use the load command:
+# 
+# For example:
+#
+# java -jar KVHOME/lib/sql.jar -helper-hosts node01:5000 \
+# -store kvstore load -file SQLParentChildJoinsExamples.cli
+
+create table if not exists JSONPersons (
+  id integer,
+  person JSON,
+  primary key (id)
+);
+
+create table if not exists JSONPersons.quotes (
+  quote_id integer,
+  quotes JSON,
+  primary key (quote_id)
+); 
+
+import -table JsonPersons -file /home/vsettipa/kv/kv/kvstore/examples/sql/jsonpersons.json
+import -table JsonPersons.quotes -file /home/vsettipa/kv/kv/kvstore/examples/sql/jsonpersons.quotes.json

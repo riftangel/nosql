@@ -1,0 +1,8 @@
+#Security property settings for communication with KVStore servers
+#Mon May 20 14:55:00 PDT 2019
+oracle.kv.ssl.trustStore=client.trust
+oracle.kv.ssl.trustStoreType=JKS
+oracle.kv.ssl.protocols=TLSv1.2,TLSv1.1,TLSv1
+oracle.kv.ssl.keyStoreType=JKS
+oracle.kv.ssl.hostnameVerifier=dnmatch(CN\=NoSQL)
+oracle.kv.transport=ssl

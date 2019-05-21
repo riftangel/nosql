@@ -1,0 +1,210 @@
+2019-05-20 21:55:02.736 UTC INFO [1] No server auth method
+2019-05-20 21:55:02.745 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-20 21:55:02.751 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 21:55:02.774 UTC INFO [1] DTVLSN at start:0
+2019-05-20 21:55:02.774 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-20 21:55:02.782 UTC INFO [1] Current group size: 0
+2019-05-20 21:55:02.782 UTC INFO [1] New node 1(-1) unknown to rep group
+2019-05-20 21:55:02.783 UTC INFO [1] Master changed to 1
+2019-05-20 21:55:02.783 UTC INFO [1] Nascent group. 1 is master by virtue of being the first node.
+2019-05-20 21:55:02.783 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-20 21:55:02.794 UTC INFO [1] Successfully added node:1(1) HostPort = ubuntu: 5005 [ELECTABLE]
+2019-05-20 21:55:02.798 UTC INFO [1] Updated minimum JE group version to 7.5.0
+2019-05-20 21:55:02.803 UTC INFO [1] Node 1 started
+2019-05-20 21:55:02.803 UTC INFO [1] node:NullNode(-1) state change from MASTER to UNKNOWN
+2019-05-20 21:55:02.804 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-20 21:55:02.805 UTC INFO [1] Feeder manager accepting requests.
+2019-05-20 21:55:02.806 UTC INFO [1] Joining group as master
+2019-05-20 22:14:21.488 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.489 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.490 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.491 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.492 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.493 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.493 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.494 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.495 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:21.496 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.744 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.745 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.746 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.747 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.748 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.749 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.750 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.750 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.751 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:14:38.752 UTC WARNING [1] Exception during read: class javax.net.ssl.SSLException : Unrecognized SSL message, plaintext connection?
+2019-05-20 22:19:38.495 UTC INFO [1] No server auth method
+2019-05-20 22:19:38.495 UTC INFO [1] No server auth method
+2019-05-20 22:19:38.502 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-20 22:19:38.502 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-20 22:19:38.511 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 22:19:38.511 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 22:19:38.530 UTC INFO [1] DTVLSN at start:230
+2019-05-20 22:19:38.530 UTC INFO [1] DTVLSN at start:230
+2019-05-20 22:19:38.530 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-20 22:19:38.539 UTC INFO [1] Current group size: 1
+2019-05-20 22:19:38.539 UTC INFO [1] Current group size: 1
+2019-05-20 22:19:38.540 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-20 22:19:38.540 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-20 22:19:38.623 UTC INFO [1] Node 1 started
+2019-05-20 22:19:38.623 UTC INFO [1] Node 1 started
+2019-05-20 22:19:38.625 UTC INFO [1] Election initiated; election #1
+2019-05-20 22:19:38.625 UTC INFO [1] Election initiated; election #1
+2019-05-20 22:19:38.627 UTC INFO [1] Started election thread Mon May 20 15:19:38 PDT 2019
+2019-05-20 22:19:38.627 UTC INFO [1] Started election thread Mon May 20 15:19:38 PDT 2019
+2019-05-20 22:19:40.669 UTC INFO [1] Winning proposal: Proposal(0000016ad75432d4:6bd6c3c17e97635a6f9d5c090bef1f10:00000002) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-20 22:19:40.669 UTC INFO [1] Winning proposal: Proposal(0000016ad75432d4:6bd6c3c17e97635a6f9d5c090bef1f10:00000002) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-20 22:19:40.691 UTC INFO [1] Master changed to 1
+2019-05-20 22:19:40.691 UTC INFO [1] Master changed to 1
+2019-05-20 22:19:40.692 UTC INFO [1] Election finished. Elapsed time: 2067ms
+2019-05-20 22:19:40.692 UTC INFO [1] Election finished. Elapsed time: 2067ms
+2019-05-20 22:19:40.692 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-20 22:19:40.692 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-20 22:19:40.693 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-20 22:19:40.693 UTC INFO [1] Feeder manager accepting requests.
+2019-05-20 22:19:40.693 UTC INFO [1] Feeder manager accepting requests.
+2019-05-20 22:19:40.693 UTC INFO [1] Joining group as master
+2019-05-20 22:19:40.693 UTC INFO [1] Joining group as master
+2019-05-20 23:40:54.930 UTC INFO [1] No server auth method
+2019-05-20 23:40:54.937 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-20 23:40:54.940 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 23:40:54.961 UTC INFO [1] DTVLSN at start:299
+2019-05-20 23:40:54.962 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-20 23:40:54.974 UTC INFO [1] Current group size: 1
+2019-05-20 23:40:54.974 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-20 23:40:55.067 UTC INFO [1] Node 1 started
+2019-05-20 23:40:55.067 UTC INFO [1] Election initiated; election #1
+2019-05-20 23:40:55.067 UTC INFO [1] Election initiated; election #1
+2019-05-20 23:40:55.071 UTC INFO [1] Started election thread Mon May 20 16:40:55 PDT 2019
+2019-05-20 23:40:55.071 UTC INFO [1] Started election thread Mon May 20 16:40:55 PDT 2019
+2019-05-20 23:40:57.091 UTC INFO [1] Winning proposal: Proposal(0000016ad79e9b70:bcb75dfb76cc5a7555d140e23976491e:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-20 23:40:57.091 UTC INFO [1] Winning proposal: Proposal(0000016ad79e9b70:bcb75dfb76cc5a7555d140e23976491e:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-20 23:40:57.107 UTC INFO [1] Master changed to 1
+2019-05-20 23:40:57.107 UTC INFO [1] Master changed to 1
+2019-05-20 23:40:57.109 UTC INFO [1] Election finished. Elapsed time: 2042ms
+2019-05-20 23:40:57.109 UTC INFO [1] Election finished. Elapsed time: 2042ms
+2019-05-20 23:40:57.109 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-20 23:40:57.109 UTC INFO [1] Feeder manager accepting requests.
+2019-05-20 23:40:57.109 UTC INFO [1] Feeder manager accepting requests.
+2019-05-20 23:40:57.110 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-20 23:40:57.110 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-20 23:40:57.111 UTC INFO [1] Joining group as master
+2019-05-21 03:02:06.744 UTC INFO [1] Shutting down node 1(1) DTVLSN:702
+2019-05-21 03:02:06.744 UTC INFO [1] Elections shutdown initiated
+2019-05-21 03:02:06.744 UTC INFO [1] Elections shutdown initiated
+2019-05-21 03:02:06.744 UTC INFO [1] Acceptor Thread 1 soft shutdown initiated.
+2019-05-21 03:02:06.744 UTC INFO [1] Acceptor Thread 1 soft shutdown initiated.
+2019-05-21 03:02:06.745 UTC INFO [1] Learner Thread 1 soft shutdown initiated.
+2019-05-21 03:02:06.745 UTC INFO [1] Learner Thread 1 soft shutdown initiated.
+2019-05-21 03:02:06.745 UTC INFO [1] ElectionThread_1(1):./kvroot/kvstore/sn1/admin1/env soft shutdown initiated.
+2019-05-21 03:02:06.745 UTC INFO [1] ElectionThread_1(1):./kvroot/kvstore/sn1/admin1/env soft shutdown initiated.
+2019-05-21 03:02:06.746 UTC INFO [1] Elections shutdown completed
+2019-05-21 03:02:06.746 UTC INFO [1] Elections shutdown completed
+2019-05-21 03:02:06.746 UTC INFO [1] Feeder manager soft shutdown.
+2019-05-21 03:02:06.746 UTC INFO [1] Feeder manager soft shutdown.
+2019-05-21 03:02:06.746 UTC INFO [1] Feeder Manager shutting down feeders. Active and nascent feeders:0 Managed feeders:0
+2019-05-21 03:02:06.746 UTC INFO [1] Feeder Manager shutting down feeders. Active and nascent feeders:0 Managed feeders:0
+2019-05-21 03:02:06.746 UTC INFO [1] MASTER 1(1) soft shutdown initiated.
+2019-05-21 03:02:06.746 UTC INFO [1] Feeder Manager completed shutting down feeders.
+2019-05-21 03:02:06.746 UTC INFO [1] Feeder Manager completed shutting down feeders.
+2019-05-21 03:02:06.747 UTC INFO [1] Feeder manager exited. CurrentTxnEnd VLSN: 702
+2019-05-21 03:02:06.747 UTC INFO [1] Feeder manager exited. CurrentTxnEnd VLSN: 702
+2019-05-21 03:02:06.747 UTC INFO [1] node:NullNode(-1) state change from MASTER to UNKNOWN
+2019-05-21 03:02:06.747 UTC INFO [1] RepNode main thread shutting down.
+2019-05-21 03:02:06.747 UTC INFO [1] node:NullNode(-1) state change from UNKNOWN to DETACHED
+2019-05-21 03:02:06.747 UTC INFO [1] RepNode main thread: DETACHED 1(1) exited.
+2019-05-21 03:02:06.747 UTC INFO [1] Feeder Manager node: 1 soft shutdown initiated.
+2019-05-21 03:02:06.748 UTC INFO [1] ServiceDispatcher shutdown starting. HostPort=ubuntu:5005 Registered services: []
+2019-05-21 03:02:06.748 UTC INFO [1] ServiceDispatcher-ubuntu:5005 soft shutdown initiated.
+2019-05-21 03:02:06.749 UTC INFO [1] ServiceDispatcher shutdown completed. HostPort=ubuntu:5005
+2019-05-21 03:02:06.749 UTC INFO [1] 1(1) shutdown completed.
+2019-05-21 03:02:18.202 UTC INFO [1] No server auth method
+2019-05-21 03:02:18.212 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-21 03:02:18.220 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 03:02:18.253 UTC INFO [1] DTVLSN at start:702
+2019-05-21 03:02:18.257 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 03:02:18.267 UTC INFO [1] Current group size: 1
+2019-05-21 03:02:18.267 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-21 03:02:18.483 UTC INFO [1] Node 1 started
+2019-05-21 03:02:18.484 UTC INFO [1] Election initiated; election #1
+2019-05-21 03:02:18.497 UTC INFO [1] Started election thread Mon May 20 20:02:18 PDT 2019
+2019-05-21 03:02:20.525 UTC INFO [1] Winning proposal: Proposal(0000016ad856fc54:d68c90f2e82964ea86163a33a7930ef4:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-21 03:02:20.533 UTC INFO [1] Master changed to 1
+2019-05-21 03:02:20.534 UTC INFO [1] Election finished. Elapsed time: 2050ms
+2019-05-21 03:02:20.535 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-21 03:02:20.535 UTC INFO [1] Feeder manager accepting requests.
+2019-05-21 03:02:20.535 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-21 03:02:20.536 UTC INFO [1] Joining group as master
+2019-05-21 03:02:31.377 UTC INFO [1] No server auth method
+2019-05-21 03:02:31.378 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-21 03:02:31.381 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 03:02:31.398 UTC INFO [1] DTVLSN at start:709
+2019-05-21 03:02:31.399 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 03:02:31.406 UTC INFO [1] Current group size: 1
+2019-05-21 03:02:31.407 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-21 03:02:31.509 UTC INFO [1] Node 1 started
+2019-05-21 03:02:31.510 UTC INFO [1] Election initiated; election #1
+2019-05-21 03:02:31.511 UTC INFO [1] Started election thread Mon May 20 20:02:31 PDT 2019
+2019-05-21 03:02:33.532 UTC INFO [1] Winning proposal: Proposal(0000016ad8572f29:f9c653db4b7b50725aec9dd05bdc8290:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-21 03:02:33.540 UTC INFO [1] Master changed to 1
+2019-05-21 03:02:33.540 UTC INFO [1] Election finished. Elapsed time: 2030ms
+2019-05-21 03:02:33.541 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-21 03:02:33.541 UTC INFO [1] Feeder manager accepting requests.
+2019-05-21 03:02:33.542 UTC INFO [1] Joining group as master
+2019-05-21 03:02:33.542 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-21 03:02:36.197 UTC INFO [1] No server auth method
+2019-05-21 03:02:36.199 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-21 03:02:36.203 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 03:02:36.228 UTC INFO [1] DTVLSN at start:709
+2019-05-21 03:02:36.228 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 03:02:36.237 UTC INFO [1] Current group size: 1
+2019-05-21 03:02:36.238 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-21 03:02:36.367 UTC INFO [1] Node 1 started
+2019-05-21 03:02:36.368 UTC INFO [1] Election initiated; election #1
+2019-05-21 03:02:36.370 UTC INFO [1] Started election thread Mon May 20 20:02:36 PDT 2019
+2019-05-21 03:02:38.395 UTC INFO [1] Winning proposal: Proposal(0000016ad8574224:b57d4ef557bdf426dc3baefca5c20621:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-21 03:02:38.404 UTC INFO [1] Master changed to 1
+2019-05-21 03:02:38.404 UTC INFO [1] Election finished. Elapsed time: 2036ms
+2019-05-21 03:02:38.405 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-21 03:02:38.405 UTC INFO [1] Feeder manager accepting requests.
+2019-05-21 03:02:38.406 UTC INFO [1] Joining group as master
+2019-05-21 03:02:38.409 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-21 03:02:38.873 UTC INFO [1] Shutting down node 1(1) DTVLSN:712
+2019-05-21 03:02:38.874 UTC INFO [1] Elections shutdown initiated
+2019-05-21 03:02:38.874 UTC INFO [1] Acceptor Thread 1 soft shutdown initiated.
+2019-05-21 03:02:38.876 UTC INFO [1] Learner Thread 1 soft shutdown initiated.
+2019-05-21 03:02:38.877 UTC INFO [1] ElectionThread_1(1):./kvroot/kvstore/sn1/admin1/env soft shutdown initiated.
+2019-05-21 03:02:38.877 UTC INFO [1] Elections shutdown completed
+2019-05-21 03:02:38.877 UTC INFO [1] Feeder manager soft shutdown.
+2019-05-21 03:02:38.877 UTC INFO [1] Feeder Manager shutting down feeders. Active and nascent feeders:0 Managed feeders:0
+2019-05-21 03:02:38.878 UTC INFO [1] Feeder Manager completed shutting down feeders.
+2019-05-21 03:02:38.878 UTC INFO [1] Feeder manager exited. CurrentTxnEnd VLSN: 712
+2019-05-21 03:02:38.878 UTC INFO [1] node:NullNode(-1) state change from MASTER to UNKNOWN
+2019-05-21 03:02:38.879 UTC INFO [1] RepNode main thread shutting down.
+2019-05-21 03:02:38.879 UTC INFO [1] node:NullNode(-1) state change from UNKNOWN to DETACHED
+2019-05-21 03:02:38.880 UTC INFO [1] DETACHED 1(1) soft shutdown initiated.
+2019-05-21 03:02:38.880 UTC INFO [1] RepNode main thread: DETACHED 1(1) exited.
+2019-05-21 03:02:38.880 UTC INFO [1] Feeder Manager node: 1 soft shutdown initiated.
+2019-05-21 03:02:38.882 UTC INFO [1] ServiceDispatcher shutdown starting. HostPort=ubuntu:5005 Registered services: []
+2019-05-21 03:02:38.882 UTC INFO [1] ServiceDispatcher-ubuntu:5005 soft shutdown initiated.
+2019-05-21 03:02:38.883 UTC INFO [1] ServiceDispatcher shutdown completed. HostPort=ubuntu:5005
+2019-05-21 03:02:38.884 UTC INFO [1] 1(1) shutdown completed.
+2019-05-21 03:03:33.810 UTC INFO [1] No server auth method
+2019-05-21 03:03:33.821 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-21 03:03:33.830 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 03:03:33.847 UTC INFO [1] DTVLSN at start:712
+2019-05-21 03:03:33.848 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 03:03:33.874 UTC INFO [1] Current group size: 1
+2019-05-21 03:03:33.874 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-21 03:03:34.050 UTC INFO [1] Node 1 started
+2019-05-21 03:03:34.051 UTC INFO [1] Election initiated; election #1
+2019-05-21 03:03:34.052 UTC INFO [1] Started election thread Mon May 20 20:03:34 PDT 2019
+2019-05-21 03:03:36.074 UTC INFO [1] Winning proposal: Proposal(0000016ad8582375:3e5a88b86fbde3d9910989b51b532f2f:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-21 03:03:36.081 UTC INFO [1] Master changed to 1
+2019-05-21 03:03:36.082 UTC INFO [1] Election finished. Elapsed time: 2031ms
+2019-05-21 03:03:36.083 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-21 03:03:36.084 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-21 03:03:36.084 UTC INFO [1] Feeder manager accepting requests.
+2019-05-21 03:03:36.085 UTC INFO [1] Joining group as master

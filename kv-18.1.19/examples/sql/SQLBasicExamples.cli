@@ -1,0 +1,22 @@
+# Example script that creates the the Users table and imports
+# data from users.json in order to follow along the basic query
+# examples in the Getting Started with SQL for Oracle NoSQL
+# Database book.
+#
+# To run the script, use the load command:
+#
+# For example:
+#
+# java -jar KVHOME/lib/sql.jar -helper-hosts node01:5000 \
+# -store kvstore load -file SQLBasicExamples.cli
+
+create table IF NOT EXISTS Users (
+  id integer,
+  firstname string,
+  lastname string,
+  age integer,
+  income integer,
+  primary key (id)
+);
+
+import -table Users -file users.json

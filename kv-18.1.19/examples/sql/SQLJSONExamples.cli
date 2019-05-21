@@ -1,0 +1,19 @@
+# Example script that creates the the Persons table and imports 
+# data from persons.json in order to follow along the advanced 
+# query examples in the Getting Started with SQL for Oracle NoSQL
+# Database book.
+#
+# To run the script, use the load command:
+# 
+# For example:
+#
+# java -jar KVHOME/lib/sql.jar -helper-hosts node01:5000 \
+# -store kvstore load -file SQLJSONExamples.cli
+
+create table if not exists JSONPersons (
+  id integer,
+  person JSON,
+  primary key (id)
+); 
+
+import -table JsonPersons -file jsonpersons.json

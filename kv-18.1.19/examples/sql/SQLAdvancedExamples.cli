@@ -1,0 +1,35 @@
+# Example script that creates the the Persons table and imports 
+# data from persons.json in order to follow along the advanced 
+# query examples in the Getting Started with SQL for Oracle NoSQL
+# Database book.
+#
+# To run the script, use the load command:
+# 
+# For example:
+#
+# java -jar KVHOME/lib/sql.jar -helper-hosts node01:5000 \
+# -store kvstore load -file SQLAdvancedExamples.cli
+
+create table if not exists Persons (
+  id integer,
+  firstname string,
+  lastname string,
+  age integer,
+  income integer,
+  lastLogin timestamp(4),
+  address record(street string,
+                 city string,
+                 state string,
+                 zipcode integer,
+                 phones array(record(type enum(work, home),
+                                    areacode integer,
+                                    number integer
+                                   )
+                            )
+                ),
+  connections array(integer),
+  expenses map(integer),
+  primary key (id)
+); 
+
+import -table Persons -file persons.json

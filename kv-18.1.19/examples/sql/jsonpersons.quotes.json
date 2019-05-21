@@ -1,0 +1,55 @@
+# This file is used by SQLParentChildJoinsExamples.cli.
+{
+ "id" : 1, 
+ "quote_id" : 0, 
+ "quotes" : 
+ 	{
+	 	"date": "2012-04-23",
+	 	"city":"Bangkok",
+	 	"charges": 16884.924
+ 	}
+ }
+ 
+ {
+ "id" : 1,
+ "quote_id" : 1, 
+ "quotes" :
+ 	{
+	 	"date": "2014-03-20",
+	 	"city":"Jakarta",
+ 		"charges": 16900.000
+ 	}
+ }
+ 
+ {
+ "id" : 1,
+ "quote_id" : 2, 
+ "quotes" : 
+ 	{
+ 		"date": "2016-06-15",
+	 	"city":"Singapore",
+ 		"charges": 17562.300
+ 	}
+ }
+ 
+ {
+ "id" : 2,
+ "quote_id" : 0, 
+ "quotes" :
+ 	{
+ 		"date": "2014-03-02",
+	 	"city":"New Jersey",
+ 		"charges": 3812.760
+ 	}
+ }
+
+ {
+ "id" : 2,
+ "quote_id" :1,
+ "quotes" : 
+ 	{
+ 		"date": "2014-03-20",
+	 	"city":"Atlanta",
+ 		"charges": 3500.128
+ 	}
+ }

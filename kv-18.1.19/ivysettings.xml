@@ -1,0 +1,23 @@
+<!-- ======================================================================
+This is the Ivy settings file for public builds, using the format defined by
+Ivy.
+
+This file is also used by the Ivy via the ivy:retrieve target in build.xml
+which resolves dependencies for the NoSQL DB build.  Libraries are retrieved
+on demand and are placed in kv/kvstore/lib/kv-external and are not checked
+into the kv repository itself.
+====================================================================== -->
+<ivysettings>
+  <settings  defaultResolver="external"
+	     defaultConflictManager="all" />
+  <resolvers>
+    <ibiblio name="libraries" m2compatible="true" />
+    <ibiblio name="cloudera-repos" m2compatible="true"
+             root="https://repository.cloudera.com/artifactory/cloudera-repos"/>
+    <!-- A resolver for both external repositories -->
+    <chain name="external">
+      <resolver ref="libraries"/>
+      <resolver ref="cloudera-repos"/>
+    </chain>
+  </resolvers>
+</ivysettings>

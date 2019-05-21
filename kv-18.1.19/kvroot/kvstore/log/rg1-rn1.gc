@@ -1,0 +1,17 @@
+[2019-05-20T20:03:32.885-0700] Using G1
+[2019-05-20T20:03:33.578-0700] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 32M->5M(128M) 11.989ms
+[2019-05-20T20:03:34.008-0700] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 36M->20M(128M) 8.532ms
+[2019-05-20T20:03:34.185-0700] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 51M->26M(128M) 7.023ms
+[2019-05-20T20:03:34.206-0700] GC(3) Pause Young (Concurrent Start) (Metadata GC Threshold) 39M->26M(128M) 7.513ms
+[2019-05-20T20:03:34.207-0700] GC(4) Concurrent Cycle
+[2019-05-20T20:03:34.216-0700] GC(4) Pause Remark 31M->31M(128M) 1.632ms
+[2019-05-20T20:03:34.221-0700] GC(4) Pause Cleanup 32M->32M(128M) 0.011ms
+[2019-05-20T20:03:34.221-0700] GC(4) Concurrent Cycle 14.289ms
+[2019-05-20T20:03:34.349-0700] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 58M->28M(160M) 1.646ms
+[2019-05-20T20:03:34.439-0700] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 60M->28M(160M) 1.219ms
+[2019-05-20T20:03:34.500-0700] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 60M->28M(160M) 1.401ms
+[2019-05-20T20:03:34.558-0700] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 60M->28M(160M) 1.656ms
+[2019-05-20T20:03:34.628-0700] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 60M->28M(160M) 1.745ms
+[2019-05-20T20:03:36.909-0700] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 60M->27M(160M) 3.312ms
+[2019-05-20T20:05:08.261-0700] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 59M->29M(160M) 27.142ms
+[2019-05-20T20:08:05.784-0700] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 61M->29M(160M) 10.933ms

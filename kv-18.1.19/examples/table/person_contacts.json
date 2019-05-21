@@ -1,0 +1,476 @@
+{
+"account" : 1,
+"person" : {
+      "lastName" : "Jones",
+      "firstName" : "Joe",
+      "address" : {
+        "home" : {
+          "street" : "15 Elm",
+          "city" : "Lakeville",
+          "zip" : "12345"
+        },
+        "work" : {
+          "street" : "12 Main",
+          "city" : "Lakeville",
+          "zip" : "12345"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-1234",
+       "work" : "877-123-4567"
+      }
+   }
+}
+
+{
+"account" : 2,
+"person" : {
+      "lastName" : "Anderson",
+      "firstName" : "Nick",
+      "address" : {
+        "home" : {
+          "street" : "4032 Kenwood Drive",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-9201",
+       "work" : "877-123-8811"
+      }
+   }
+}
+
+{
+"account" : 3,
+"person" : {
+      "lastName" : "Long",
+      "firstName" : "Betty",
+      "address" : {
+        "work" : {
+          "street" : "10 Circle Drive",
+          "city" : "Minneapolis",
+          "zip" : "55111"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-2701",
+       "work" : "877-181-4912"
+      }
+   }
+}
+
+{
+"account" : 4,
+"person" : {
+      "lastName" : "Brown",
+      "firstName" : "Harrison",
+      "phone" : {
+        "home" : "800-555-3838",
+       "work" : "877-753-4110"
+      }
+   }
+}
+
+{
+"account" : 5
+}
+
+{
+"account" : 6,
+"person" : {
+      "lastName" : "Abrams",
+      "firstName" : "Cynthia",
+      "address" : {
+        "home" : {
+          "street" : "2 Fairfield Drive",
+          "city" : "San Jose",
+          "zip" : "95054"
+        }
+      },
+      "phone" : {
+        "home" : "800-528-4897",
+       "work" : "877-180-5287"
+      }
+   }
+}
+
+{
+"account" : 7,
+"person" : {
+      "lastName" : "Napier",
+      "firstName" : "Todd",
+      "address" : {
+        "home" : {
+          "street" : "333 Sergeant Avenue",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-7101",
+       "work" : "877-123-9361"
+      }
+   }
+}
+
+{
+"account" : 8,
+"person" : {
+      "lastName" : "Miller",
+      "firstName" : "Michael",
+      "address" : {
+        "home" : {
+          "street" : "9 Kentucky Way",
+          "city" : "Minneapolis",
+          "zip" : "55409"
+        },
+        "work" : {
+          "street" : "10 Circle Drive",
+          "city" : "Minneapolis",
+          "zip" : "55111"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-9457",
+       "work" : "877-123-3382"
+      }
+   }
+}
+
+{
+"account" : 9,
+"person" : {
+      "lastName" : "Roberg",
+      "firstName" : "Heather",
+      "address" : {
+        "home" : {
+          "street" : "1210 Lillian Avenue",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-7201",
+       "work" : "877-123-1341"
+      }
+   }
+}
+
+{
+"account" : 10,
+"person" : {
+      "lastName" : "Landt",
+      "firstName" : "Brian",
+      "address" : {
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-5039",
+       "work" : "877-123-4345"
+      }
+   }
+}
+
+{
+"account" : 11,
+"person" : {
+      "lastName" : "Findell",
+      "firstName" : "Scott",
+      "address" : {
+        "home" : {
+          "street" : "8299 Carroll Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-8839",
+       "work" : "877-123-1141"
+      }
+   }
+}
+
+{
+"account" : 12,
+"person" : {
+      "lastName" : "Gelhar",
+      "firstName" : "Ron",
+      "address" : {
+        "home" : {
+          "street" : "494 Long Lake Terrace",
+          "city" : "Minneapolis",
+          "zip" : "55418"
+        },
+        "work" : {
+          "street" : "10 Circle Drive",
+          "city" : "Minneapolis",
+          "zip" : "55111"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-6621",
+       "work" : "877-123-3006"
+      }
+   }
+}
+
+{
+"account" : 13,
+"person" : {
+      "lastName" : "Coverston",
+      "firstName" : "Sara",
+      "address" : {
+        "home" : {
+          "street" : "285 Hampton Drive",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-2839",
+       "work" : "877-123-1141"
+      }
+   }
+}
+
+{
+"account" : 14,
+"person" : {
+      "lastName" : "Larson",
+      "firstName" : "David",
+      "address" : {
+        "home" : {
+          "street" : "81 Springfield Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-4190",
+       "work" : "877-123-7772"
+      }
+   }
+}
+
+{
+"account" : 15,
+"person" : {
+      "lastName" : "Ayers",
+      "firstName" : "Celeste",
+      "address" : {
+        "home" : {
+          "street" : "9183 Gray Drive",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-8997",
+       "work" : "877-123-1466"
+      }
+   }
+}
+
+{
+"account" : 16,
+"person" : {
+      "lastName" : "Edwards",
+      "firstName" : "Glenda",
+      "address" : {
+        "home" : {
+          "street" : "795 Able Street",
+          "city" : "Minneapolis",
+          "zip" : "55418"
+        },
+        "work" : {
+          "street" : "10 Circle Drive",
+          "city" : "Minneapolis",
+          "zip" : "55111"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-8313",
+       "work" : "877-123-4188"
+      }
+   }
+}
+
+{
+"account" : 17,
+"person" : {
+      "lastName" : "McClurg",
+      "firstName" : "Mark",
+      "address" : {
+        "home" : {
+          "street" : "93 Appleton Way",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-3317",
+       "work" : "877-123-5956"
+      }
+   }
+}
+
+{
+"account" : 18,
+"person" : {
+      "lastName" : "Fujinoki",
+      "firstName" : "Maeko",
+      "address" : {
+        "home" : {
+          "street" : "93 Canton Drive",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-0219",
+       "work" : "877-123-3823"
+      }
+   }
+}
+
+{
+"account" : 19,
+"person" : {
+      "lastName" : "Hinsverk",
+      "firstName" : "Preston",
+      "address" : {
+        "home" : {
+          "street" : "5 Bonview Drive",
+          "city" : "Minneapolis",
+          "zip" : "55418"
+        },
+        "work" : {
+          "street" : "10 Circle Drive",
+          "city" : "Minneapolis",
+          "zip" : "55111"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-4471",
+       "work" : "877-123-9990"
+      }
+   }
+}
+
+{
+"account" : 20,
+"person" : {
+      "lastName" : "Fish",
+      "firstName" : "Clarence",
+      "address" : {
+        "home" : {
+          "street" : "8802 Northampton Way",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-7734",
+       "work" : "877-123-5828"
+      }
+   }
+}
+
+{
+"account" : 21,
+"person" : {
+      "lastName" : "Blase",
+      "firstName" : "Lisa",
+      "address" : {
+        "home" : {
+          "street" : "72 Rutland Circle",
+          "city" : "Boston",
+          "zip" : "02102"
+        },
+        "work" : {
+          "street" : "541 Bronx Street",
+          "city" : "Boston",
+          "zip" : "02102"
+        }
+      },
+      "phone" : {
+        "home" : "800-555-4404",
+       "work" : "877-123-2277"
+      }
+   }
+}
+
+{
+"account" : 22,
+"person" : {
+      "address" : null,
+      "phone" : {
+        "home" : "800-555-1234",
+       "work" : "877-123-4567"
+      }
+   }
+}
+
+{
+"account" : 23,
+"person" : {
+      "address" : {
+        "home" : null,
+        "work" : null 
+      },
+      "phone" : {
+        "home" : "800-555-1234",
+       "work" : "877-123-4567"
+      }
+   }
+}

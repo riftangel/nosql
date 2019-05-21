@@ -1,0 +1,177 @@
+2019-05-20 21:55:04.068 UTC INFO [rg1-rn1] No server auth method
+2019-05-20 21:55:04.073 UTC INFO [rg1-rn1] DTVLSN at start:0
+2019-05-20 21:55:04.073 UTC INFO [rg1-rn1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-20 21:55:04.076 UTC INFO [rg1-rn1] Current group size: 0
+2019-05-20 21:55:04.076 UTC INFO [rg1-rn1] New node rg1-rn1(-1) unknown to rep group
+2019-05-20 21:55:04.076 UTC INFO [rg1-rn1] Master changed to rg1-rn1
+2019-05-20 21:55:04.077 UTC INFO [rg1-rn1] Nascent group. rg1-rn1 is master by virtue of being the first node.
+2019-05-20 21:55:04.076 UTC INFO [rg1-rn1] Started ServiceDispatcher. HostPort=ubuntu:5006
+2019-05-20 21:55:04.077 UTC INFO [rg1-rn1] node:rg1-rn1(1) state change from UNKNOWN to MASTER
+2019-05-20 21:55:04.083 UTC INFO [rg1-rn1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 21:55:04.089 UTC INFO [rg1-rn1] Successfully added node:rg1-rn1(1) HostPort = ubuntu: 5006 [ELECTABLE]
+2019-05-20 21:55:04.091 UTC INFO [rg1-rn1] Updated minimum JE group version to 7.5.0
+2019-05-20 21:55:04.099 UTC INFO [rg1-rn1] Node rg1-rn1 started
+2019-05-20 21:55:04.099 UTC INFO [rg1-rn1] node:NullNode(-1) state change from MASTER to UNKNOWN
+2019-05-20 21:55:04.099 UTC INFO [rg1-rn1] node:rg1-rn1(1) state change from UNKNOWN to MASTER
+2019-05-20 21:55:04.099 UTC INFO [rg1-rn1] Feeder manager accepting requests.
+2019-05-20 21:55:04.100 UTC INFO [rg1-rn1] Joining group as master
+2019-05-20 22:19:38.495 UTC INFO [rg1-rn1] No server auth method
+2019-05-20 22:19:38.495 UTC INFO [rg1-rn1] No server auth method
+2019-05-20 22:19:38.502 UTC INFO [rg1-rn1] Started ServiceDispatcher. HostPort=ubuntu:5006
+2019-05-20 22:19:38.502 UTC INFO [rg1-rn1] Started ServiceDispatcher. HostPort=ubuntu:5006
+2019-05-20 22:19:38.512 UTC INFO [rg1-rn1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 22:19:38.512 UTC INFO [rg1-rn1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 22:19:38.530 UTC INFO [rg1-rn1] DTVLSN at start:51
+2019-05-20 22:19:38.530 UTC INFO [rg1-rn1] DTVLSN at start:51
+2019-05-20 22:19:38.530 UTC INFO [rg1-rn1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-20 22:19:38.539 UTC INFO [rg1-rn1] Current group size: 1
+2019-05-20 22:19:38.539 UTC INFO [rg1-rn1] Current group size: 1
+2019-05-20 22:19:38.539 UTC INFO [rg1-rn1] Existing node rg1-rn1 querying for a current master.
+2019-05-20 22:19:38.539 UTC INFO [rg1-rn1] Existing node rg1-rn1 querying for a current master.
+2019-05-20 22:19:38.623 UTC INFO [rg1-rn1] Node rg1-rn1 started
+2019-05-20 22:19:38.623 UTC INFO [rg1-rn1] Node rg1-rn1 started
+2019-05-20 22:19:38.624 UTC INFO [rg1-rn1] Election initiated; election #1
+2019-05-20 22:19:38.624 UTC INFO [rg1-rn1] Election initiated; election #1
+2019-05-20 22:19:38.627 UTC INFO [rg1-rn1] Started election thread Mon May 20 15:19:38 PDT 2019
+2019-05-20 22:19:38.627 UTC INFO [rg1-rn1] Started election thread Mon May 20 15:19:38 PDT 2019
+2019-05-20 22:19:40.652 UTC INFO [rg1-rn1] Winning proposal: Proposal(0000016ad75432d4:6bd6c3c17e97635a6f9d5c090bef1f10:00000001) Value: Value:ubuntu$$$5006$$$rg1-rn1$$$1
+2019-05-20 22:19:40.652 UTC INFO [rg1-rn1] Winning proposal: Proposal(0000016ad75432d4:6bd6c3c17e97635a6f9d5c090bef1f10:00000001) Value: Value:ubuntu$$$5006$$$rg1-rn1$$$1
+2019-05-20 22:19:40.663 UTC INFO [rg1-rn1] Master changed to rg1-rn1
+2019-05-20 22:19:40.663 UTC INFO [rg1-rn1] Master changed to rg1-rn1
+2019-05-20 22:19:40.668 UTC INFO [rg1-rn1] Election finished. Elapsed time: 2044ms
+2019-05-20 22:19:40.668 UTC INFO [rg1-rn1] Election finished. Elapsed time: 2044ms
+2019-05-20 22:19:40.668 UTC INFO [rg1-rn1] Election thread exited. Group master: rg1-rn1(1)
+2019-05-20 22:19:40.668 UTC INFO [rg1-rn1] Election thread exited. Group master: rg1-rn1(1)
+2019-05-20 22:19:40.669 UTC INFO [rg1-rn1] node:rg1-rn1(1) state change from UNKNOWN to MASTER
+2019-05-20 22:19:40.669 UTC INFO [rg1-rn1] Feeder manager accepting requests.
+2019-05-20 22:19:40.669 UTC INFO [rg1-rn1] Feeder manager accepting requests.
+2019-05-20 22:19:40.670 UTC INFO [rg1-rn1] Joining group as master
+2019-05-20 22:19:40.670 UTC INFO [rg1-rn1] Joining group as master
+2019-05-20 23:40:54.933 UTC INFO [rg1-rn1] No server auth method
+2019-05-20 23:40:54.938 UTC INFO [rg1-rn1] Started ServiceDispatcher. HostPort=ubuntu:5006
+2019-05-20 23:40:54.941 UTC INFO [rg1-rn1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-20 23:40:54.961 UTC INFO [rg1-rn1] DTVLSN at start:68
+2019-05-20 23:40:54.962 UTC INFO [rg1-rn1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-20 23:40:54.971 UTC INFO [rg1-rn1] Current group size: 1
+2019-05-20 23:40:54.971 UTC INFO [rg1-rn1] Existing node rg1-rn1 querying for a current master.
+2019-05-20 23:40:55.067 UTC INFO [rg1-rn1] Node rg1-rn1 started
+2019-05-20 23:40:55.068 UTC INFO [rg1-rn1] Election initiated; election #1
+2019-05-20 23:40:55.068 UTC INFO [rg1-rn1] Election initiated; election #1
+2019-05-20 23:40:55.070 UTC INFO [rg1-rn1] Started election thread Mon May 20 16:40:55 PDT 2019
+2019-05-20 23:40:55.070 UTC INFO [rg1-rn1] Started election thread Mon May 20 16:40:55 PDT 2019
+2019-05-20 23:40:57.096 UTC INFO [rg1-rn1] Winning proposal: Proposal(0000016ad79e9b6f:bcb75dfb76cc5a7555d140e23976491e:00000002) Value: Value:ubuntu$$$5006$$$rg1-rn1$$$1
+2019-05-20 23:40:57.096 UTC INFO [rg1-rn1] Winning proposal: Proposal(0000016ad79e9b6f:bcb75dfb76cc5a7555d140e23976491e:00000002) Value: Value:ubuntu$$$5006$$$rg1-rn1$$$1
+2019-05-20 23:40:57.107 UTC INFO [rg1-rn1] Master changed to rg1-rn1
+2019-05-20 23:40:57.107 UTC INFO [rg1-rn1] Master changed to rg1-rn1
+2019-05-20 23:40:57.108 UTC INFO [rg1-rn1] Election finished. Elapsed time: 2040ms
+2019-05-20 23:40:57.108 UTC INFO [rg1-rn1] Election finished. Elapsed time: 2040ms
+2019-05-20 23:40:57.109 UTC INFO [rg1-rn1] node:rg1-rn1(1) state change from UNKNOWN to MASTER
+2019-05-20 23:40:57.109 UTC INFO [rg1-rn1] Election thread exited. Group master: rg1-rn1(1)
+2019-05-20 23:40:57.109 UTC INFO [rg1-rn1] Election thread exited. Group master: rg1-rn1(1)
+2019-05-20 23:40:57.109 UTC INFO [rg1-rn1] Feeder manager accepting requests.
+2019-05-20 23:40:57.109 UTC INFO [rg1-rn1] Feeder manager accepting requests.
+2019-05-20 23:40:57.113 UTC INFO [rg1-rn1] Joining group as master
+2019-05-21 00:46:16.235 UTC INFO [rg1-rn1] Updated minimum JE group version to 18.1.7
+2019-05-21 00:46:16.235 UTC INFO [rg1-rn1] Updated minimum JE group version to 18.1.7
+2019-05-21 00:46:16.243 UTC INFO [rg1-rn1] Start extinct record scan, id=-1 label=DropTable:Users2
+2019-05-21 00:46:16.247 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-1 pass1Scanned=0 pass1Extinct=0 pass2Scanned=0 pass2Extinct=0 label=DropTable:Users2
+2019-05-21 00:54:35.955 UTC INFO [rg1-rn1] Start extinct record scan, id=-2 label=DropTable:Users2
+2019-05-21 00:54:35.958 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-2 pass1Scanned=0 pass1Extinct=0 pass2Scanned=0 pass2Extinct=0 label=DropTable:Users2
+2019-05-21 02:10:02.980 UTC INFO [rg1-rn1] Start extinct record scan, id=-3 label=DropTable:Users2
+2019-05-21 02:10:02.980 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-3 pass1Scanned=0 pass1Extinct=0 pass2Scanned=0 pass2Extinct=0 label=DropTable:Users2
+2019-05-21 02:12:10.330 UTC INFO [rg1-rn1] Start extinct record scan, id=-4 label=DropTable:Users2
+2019-05-21 02:12:10.332 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-4 pass1Scanned=0 pass1Extinct=0 pass2Scanned=0 pass2Extinct=0 label=DropTable:Users2
+2019-05-21 02:12:44.774 UTC INFO [rg1-rn1] Start extinct record scan, id=-5 label=DropTable:Users2
+2019-05-21 02:12:44.778 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-5 pass1Scanned=0 pass1Extinct=0 pass2Scanned=0 pass2Extinct=0 label=DropTable:Users2
+2019-05-21 02:13:03.762 UTC INFO [rg1-rn1] Start extinct record scan, id=-6 label=DropTable:Users2
+2019-05-21 02:13:03.762 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-6 pass1Scanned=0 pass1Extinct=0 pass2Scanned=0 pass2Extinct=0 label=DropTable:Users2
+2019-05-21 02:14:44.506 UTC INFO [rg1-rn1] Start extinct record scan, id=-7 label=DropTable:Users2
+2019-05-21 02:14:44.510 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-7 pass1Scanned=1 pass1Extinct=1 pass2Scanned=1 pass2Extinct=1 label=DropTable:Users2
+2019-05-21 02:42:46.614 UTC INFO [rg1-rn1] Start extinct record scan, id=-8 label=DropTable:Users2
+2019-05-21 02:42:46.615 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-8 pass1Scanned=1 pass1Extinct=1 pass2Scanned=1 pass2Extinct=1 label=DropTable:Users2
+2019-05-21 02:44:02.295 UTC INFO [rg1-rn1] Start extinct record scan, id=-9 label=DropTable:Users2
+2019-05-21 02:44:02.298 UTC INFO [rg1-rn1] End extinct record scan, wait for checkpoint, id=-9 pass1Scanned=1 pass1Extinct=1 pass2Scanned=1 pass2Extinct=1 label=DropTable:Users2
+2019-05-21 03:02:06.671 UTC INFO [rg1-rn1] Shutting down node rg1-rn1(1) DTVLSN:207058
+2019-05-21 03:02:06.672 UTC INFO [rg1-rn1] Elections shutdown initiated
+2019-05-21 03:02:06.672 UTC INFO [rg1-rn1] Elections shutdown initiated
+2019-05-21 03:02:06.672 UTC INFO [rg1-rn1] Acceptor Thread rg1-rn1 soft shutdown initiated.
+2019-05-21 03:02:06.672 UTC INFO [rg1-rn1] Acceptor Thread rg1-rn1 soft shutdown initiated.
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] Learner Thread rg1-rn1 soft shutdown initiated.
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] Learner Thread rg1-rn1 soft shutdown initiated.
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] ElectionThread_rg1-rn1(1):/home/ankh/nosql/kv-18.1.19/./kvroot/kvstore/sn1/rg1-rn1/env soft shutdown initiated.
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] ElectionThread_rg1-rn1(1):/home/ankh/nosql/kv-18.1.19/./kvroot/kvstore/sn1/rg1-rn1/env soft shutdown initiated.
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] Elections shutdown completed
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] Elections shutdown completed
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] Feeder manager soft shutdown.
+2019-05-21 03:02:06.675 UTC INFO [rg1-rn1] Feeder manager soft shutdown.
+2019-05-21 03:02:06.676 UTC INFO [rg1-rn1] MASTER rg1-rn1(1) soft shutdown initiated.
+2019-05-21 03:02:06.676 UTC INFO [rg1-rn1] Feeder Manager shutting down feeders. Active and nascent feeders:0 Managed feeders:0
+2019-05-21 03:02:06.676 UTC INFO [rg1-rn1] Feeder Manager shutting down feeders. Active and nascent feeders:0 Managed feeders:0
+2019-05-21 03:02:06.676 UTC INFO [rg1-rn1] Feeder Manager completed shutting down feeders.
+2019-05-21 03:02:06.676 UTC INFO [rg1-rn1] Feeder Manager completed shutting down feeders.
+2019-05-21 03:02:06.677 UTC INFO [rg1-rn1] Feeder manager exited. CurrentTxnEnd VLSN: 207,058
+2019-05-21 03:02:06.677 UTC INFO [rg1-rn1] Feeder manager exited. CurrentTxnEnd VLSN: 207,058
+2019-05-21 03:02:06.677 UTC INFO [rg1-rn1] node:NullNode(-1) state change from MASTER to UNKNOWN
+2019-05-21 03:02:06.678 UTC INFO [rg1-rn1] RepNode main thread shutting down.
+2019-05-21 03:02:06.678 UTC INFO [rg1-rn1] node:NullNode(-1) state change from UNKNOWN to DETACHED
+2019-05-21 03:02:06.678 UTC INFO [rg1-rn1] RepNode main thread: DETACHED rg1-rn1(1) exited.
+2019-05-21 03:02:06.678 UTC INFO [rg1-rn1] Feeder Manager node: rg1-rn1 soft shutdown initiated.
+2019-05-21 03:02:06.678 UTC INFO [rg1-rn1] ServiceDispatcher shutdown starting. HostPort=ubuntu:5006 Registered services: [PartitionMigration]
+2019-05-21 03:02:06.679 UTC INFO [rg1-rn1] ServiceDispatcher-ubuntu:5006 soft shutdown initiated.
+2019-05-21 03:02:06.679 UTC INFO [rg1-rn1] ServiceDispatcher shutdown completed. HostPort=ubuntu:5006
+2019-05-21 03:02:06.679 UTC INFO [rg1-rn1] rg1-rn1(1) shutdown completed.
+2019-05-21 03:02:06.699 UTC INFO [rg1-rn1] Deleted complete extinct record scans after checkpoint, ids=[-1, -2, -3, -4, -5, -6, -7, -8, -9]
+2019-05-21 03:02:18.993 UTC INFO [rg1-rn1] No server auth method
+2019-05-21 03:02:18.994 UTC INFO [rg1-rn1] Started ServiceDispatcher. HostPort=ubuntu:5006
+2019-05-21 03:02:18.999 UTC INFO [rg1-rn1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 03:02:19.013 UTC INFO [rg1-rn1] DTVLSN at start:207,058
+2019-05-21 03:02:19.013 UTC INFO [rg1-rn1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 03:02:19.022 UTC INFO [rg1-rn1] Current group size: 1
+2019-05-21 03:02:19.022 UTC INFO [rg1-rn1] Existing node rg1-rn1 querying for a current master.
+2019-05-21 03:02:19.098 UTC INFO [rg1-rn1] Node rg1-rn1 started
+2019-05-21 03:02:19.099 UTC INFO [rg1-rn1] Election initiated; election #1
+2019-05-21 03:02:19.100 UTC INFO [rg1-rn1] Started election thread Mon May 20 20:02:19 PDT 2019
+2019-05-21 03:02:21.151 UTC INFO [rg1-rn1] Winning proposal: Proposal(0000016ad856fead:6b9c377a154e1f8824db1dc5a3954258:00000001) Value: Value:ubuntu$$$5006$$$rg1-rn1$$$1
+2019-05-21 03:02:21.176 UTC INFO [rg1-rn1] Master changed to rg1-rn1
+2019-05-21 03:02:21.176 UTC INFO [rg1-rn1] Election finished. Elapsed time: 2077ms
+2019-05-21 03:02:21.176 UTC INFO [rg1-rn1] node:rg1-rn1(1) state change from UNKNOWN to MASTER
+2019-05-21 03:02:21.177 UTC INFO [rg1-rn1] Feeder manager accepting requests.
+2019-05-21 03:02:21.178 UTC INFO [rg1-rn1] Joining group as master
+2019-05-21 03:02:21.179 UTC INFO [rg1-rn1] Election thread exited. Group master: rg1-rn1(1)
+2019-05-21 03:03:34.688 UTC INFO [rg1-rn1] No server auth method
+2019-05-21 03:03:34.694 UTC INFO [rg1-rn1] Started ServiceDispatcher. HostPort=ubuntu:5006
+2019-05-21 03:03:34.708 UTC INFO [rg1-rn1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 03:03:34.730 UTC INFO [rg1-rn1] DTVLSN at start:207,059
+2019-05-21 03:03:34.730 UTC INFO [rg1-rn1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 03:03:34.741 UTC INFO [rg1-rn1] Current group size: 1
+2019-05-21 03:03:34.741 UTC INFO [rg1-rn1] Existing node rg1-rn1 querying for a current master.
+2019-05-21 03:03:34.826 UTC INFO [rg1-rn1] Node rg1-rn1 started
+2019-05-21 03:03:34.827 UTC INFO [rg1-rn1] Election initiated; election #1
+2019-05-21 03:03:34.828 UTC INFO [rg1-rn1] Started election thread Mon May 20 20:03:34 PDT 2019
+2019-05-21 03:03:36.848 UTC INFO [rg1-rn1] Winning proposal: Proposal(0000016ad858267e:06abab0cb3b13af2fc70f807db00f6a8:00000001) Value: Value:ubuntu$$$5006$$$rg1-rn1$$$1
+2019-05-21 03:03:36.852 UTC INFO [rg1-rn1] Master changed to rg1-rn1
+2019-05-21 03:03:36.853 UTC INFO [rg1-rn1] Election finished. Elapsed time: 2026ms
+2019-05-21 03:03:36.854 UTC INFO [rg1-rn1] Election thread exited. Group master: rg1-rn1(1)
+2019-05-21 03:03:36.854 UTC INFO [rg1-rn1] node:rg1-rn1(1) state change from UNKNOWN to MASTER
+2019-05-21 03:03:36.854 UTC INFO [rg1-rn1] Feeder manager accepting requests.
+2019-05-21 03:03:36.855 UTC INFO [rg1-rn1] Joining group as master
+2019-05-21 03:08:05.707 UTC INFO [rg1-rn1] Shutting down node rg1-rn1(1) DTVLSN:207064
+2019-05-21 03:08:05.707 UTC INFO [rg1-rn1] Elections shutdown initiated
+2019-05-21 03:08:05.708 UTC INFO [rg1-rn1] Acceptor Thread rg1-rn1 soft shutdown initiated.
+2019-05-21 03:08:05.710 UTC INFO [rg1-rn1] Learner Thread rg1-rn1 soft shutdown initiated.
+2019-05-21 03:08:05.711 UTC INFO [rg1-rn1] ElectionThread_rg1-rn1(1):/home/ankh/nosql/kv-18.1.19/./kvroot/kvstore/sn1/rg1-rn1/env soft shutdown initiated.
+2019-05-21 03:08:05.711 UTC INFO [rg1-rn1] Elections shutdown completed
+2019-05-21 03:08:05.711 UTC INFO [rg1-rn1] Feeder manager soft shutdown.
+2019-05-21 03:08:05.711 UTC INFO [rg1-rn1] Feeder Manager shutting down feeders. Active and nascent feeders:0 Managed feeders:0
+2019-05-21 03:08:05.712 UTC INFO [rg1-rn1] Feeder Manager completed shutting down feeders.
+2019-05-21 03:08:05.712 UTC INFO [rg1-rn1] Feeder manager exited. CurrentTxnEnd VLSN: 207,064
+2019-05-21 03:08:05.712 UTC INFO [rg1-rn1] node:NullNode(-1) state change from MASTER to UNKNOWN
+2019-05-21 03:08:05.713 UTC INFO [rg1-rn1] RepNode main thread shutting down.
+2019-05-21 03:08:05.713 UTC INFO [rg1-rn1] node:NullNode(-1) state change from UNKNOWN to DETACHED
+2019-05-21 03:08:05.715 UTC INFO [rg1-rn1] DETACHED rg1-rn1(1) soft shutdown initiated.
+2019-05-21 03:08:05.715 UTC INFO [rg1-rn1] RepNode main thread: DETACHED rg1-rn1(1) exited.
+2019-05-21 03:08:05.715 UTC INFO [rg1-rn1] Feeder Manager node: rg1-rn1 soft shutdown initiated.
+2019-05-21 03:08:05.716 UTC INFO [rg1-rn1] ServiceDispatcher shutdown starting. HostPort=ubuntu:5006 Registered services: [PartitionMigration]
+2019-05-21 03:08:05.716 UTC INFO [rg1-rn1] ServiceDispatcher-ubuntu:5006 soft shutdown initiated.
+2019-05-21 03:08:05.717 UTC INFO [rg1-rn1] ServiceDispatcher shutdown completed. HostPort=ubuntu:5006
+2019-05-21 03:08:05.717 UTC INFO [rg1-rn1] rg1-rn1(1) shutdown completed.
