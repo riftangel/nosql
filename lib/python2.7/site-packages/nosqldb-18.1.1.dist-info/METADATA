@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: nosqldb
+Version: 18.1.1
+Summary: A Python driver for Oracle NoSQL Database
+Home-page: http://www.oracle.com/technetwork/database/database-technologies/nosqldb/downloads
+Author: George Feinberg
+Author-email: george.feinberg@oracle.com
+License: Apache V2.0
+Keywords: database,nosql,development
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Database :: Front-Ends
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: thrift
+
+UNKNOWN
+
+
