@@ -1996,3 +1996,98 @@ store=kvstore  numPartitions=10 sequence=14
 2019-05-21 03:08:06.153 UTC INFO - [admin1] [sn1] rg1-rn1: Service status: STOPPED 2019-05-21 03:08:06 UTC
 2019-05-21 03:08:06.138 UTC INFO - [sn1] rg1-rn1: ProcessMonitor: not restarting
 2019-05-21 03:08:06.138 UTC INFO - [sn1] rg1-rn1: Stopped RepNode
+2019-05-21 12:36:23.795 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 12:36:23.799 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 12:36:23.799 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 12:36:23.804 UTC INFO - [admin1] DataChannelFactory: ssl
+2019-05-21 12:36:23.805 UTC INFO - [admin1] AdminStateTracker thread start: admin1
+2019-05-21 12:36:23.968 UTC INFO - [admin1] JE recovery: FIND_END_OF_LOG
+2019-05-21 12:36:23.987 UTC INFO - [admin1] JE recovery: FIND_LAST_CKPT
+2019-05-21 12:36:23.990 UTC INFO - [admin1] JE recovery: READ_DBMAP_INFO
+2019-05-21 12:36:23.999 UTC INFO - [admin1] JE recovery: REDO_DBMAP_INFO
+2019-05-21 12:36:24.001 UTC INFO - [admin1] JE recovery: UNDO_DBMAP_RECORDS
+2019-05-21 12:36:24.003 UTC INFO - [admin1] JE recovery: REDO_DBMAP_RECORDS
+2019-05-21 12:36:24.006 UTC INFO - [admin1] JE recovery: READ_DATA_INFO
+2019-05-21 12:36:24.011 UTC INFO - [admin1] JE recovery: REDO_DATA_INFO
+2019-05-21 12:36:24.014 UTC INFO - [admin1] JE recovery: UNDO_DATA_RECORDS
+2019-05-21 12:36:24.015 UTC INFO - [admin1] JE recovery: REDO_DATA_RECORDS
+2019-05-21 12:36:24.021 UTC INFO - [admin1] JE recovery: FINISH_VERIFICATION
+2019-05-21 12:36:24.021 UTC INFO - [admin1] JE recovery: POPULATE_UTILIZATION_PROFILE
+2019-05-21 12:36:24.028 UTC INFO - [admin1] JE recovery: POPULATE_EXPIRATION_PROFILE
+2019-05-21 12:36:24.052 UTC INFO - [admin1] JE recovery: REMOVE_TEMP_DBS
+2019-05-21 12:36:24.060 UTC INFO - [admin1] JE recovery: CKPT
+2019-05-21 12:36:24.078 UTC INFO - [admin1] JE recovery: RECOVERY_FINISHED
+2019-05-21 12:36:24.095 UTC INFO - [admin1] JE: No server auth method
+2019-05-21 12:36:24.105 UTC INFO - [admin1] JE: Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-21 12:36:24.106 UTC INFO - [admin1] JE: DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 12:36:24.116 UTC INFO - [admin1] JE: DTVLSN at start:741
+2019-05-21 12:36:24.117 UTC INFO - [admin1] JE: node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 12:36:24.125 UTC INFO - [admin1] JE: Current group size: 1
+2019-05-21 12:36:24.125 UTC INFO - [admin1] JE: Existing node 1 querying for a current master.
+2019-05-21 12:36:24.238 UTC INFO - [admin1] JE recovery: BECOME_CONSISTENT
+2019-05-21 12:36:24.238 UTC INFO - [admin1] JE: Node 1 started
+2019-05-21 12:36:24.239 UTC INFO - [admin1] JE: Election initiated; election #1
+2019-05-21 12:36:24.241 UTC INFO - [admin1] JE: Started election thread Tue May 21 05:36:24 PDT 2019
+2019-05-21 12:36:26.268 UTC INFO - [admin1] JE: Winning proposal: Proposal(0000016ada649601:54a2167f1a4da3aeb0de3ac919ee1fe6:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-21 12:36:26.281 UTC INFO - [admin1] JE: Master changed to 1
+2019-05-21 12:36:26.282 UTC INFO - [admin1] JE: Election finished. Elapsed time: 2043ms
+2019-05-21 12:36:26.283 UTC INFO - [admin1] JE: node:1(1) state change from UNKNOWN to MASTER
+2019-05-21 12:36:26.283 UTC INFO - [admin1] JE: Election thread exited. Group master: 1(1)
+2019-05-21 12:36:26.284 UTC INFO - [admin1] JE: Feeder manager accepting requests.
+2019-05-21 12:36:26.285 UTC INFO - [admin1] JE: Joining group as master
+2019-05-21 12:36:26.287 UTC INFO - [admin1] State change event: Tue May 21 05:36:26 PDT 2019, State: MASTER, Type: PRIMARY, Master: 1
+2019-05-21 12:36:26.288 UTC INFO - [admin1] AdminStateTracker queue added:MASTER
+2019-05-21 12:36:26.300 UTC INFO - [admin1] Initialize stores at schema version 5, readOnly=false
+2019-05-21 12:36:26.303 UTC INFO - [admin1] Open: AdminCriticalEventsDatabase
+2019-05-21 12:36:26.304 UTC INFO - [admin1] Open: AdminParametersDatabase
+2019-05-21 12:36:26.305 UTC INFO - [admin1] Open: AdminMemoDatabase
+2019-05-21 12:36:26.307 UTC INFO - [admin1] Open: AdminPlanDatabase
+2019-05-21 12:36:26.308 UTC INFO - [admin1] Open: AdminSecurityDatabase
+2019-05-21 12:36:26.310 UTC INFO - [admin1] Open: AdminTableDatabase
+2019-05-21 12:36:26.312 UTC INFO - [admin1] Open: AdminTopologyHistoryDatabase
+2019-05-21 12:36:26.313 UTC INFO - [admin1] Open: AdminTopologyCandidateDatabase
+2019-05-21 12:36:26.317 UTC FINE - Closing StorewideLoggingView
+2019-05-21 12:36:26.374 UTC INFO - [admin1] Using existing Admin database
+2019-05-21 12:36:26.386 UTC INFO - [admin1] Monitor collector: adding sn1 to monitoring
+2019-05-21 12:36:26.387 UTC INFO - [admin1] Monitor collector: adding rg1-rn1 to monitoring
+2019-05-21 12:36:26.602 UTC INFO - [admin1] Starting Thread[System table monitor,5,main]
+2019-05-21 12:36:22.686 UTC INFO - [sn1] Starting StorageNodeAgent for kvstore
+2019-05-21 12:36:26.610 UTC INFO - [admin1] Replicated environment handle established. Cache size: 80530636, State: MASTER
+2019-05-21 12:36:22.690 UTC INFO - [sn1] Creating a Registry on port ubuntu:5000 server socket factory:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@2e4b8173 sslContext=javax.net.ssl.SSLContext@70e8f8e sslAuthenticator=null]>
+2019-05-21 12:36:22.710 UTC INFO - [sn1] Using mgmt class oracle.kv.impl.mgmt.NoOpAgent
+2019-05-21 12:36:23.356 UTC INFO - [sn1] Bound trusted login to registry port 5000 using name SNA with SSF:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@10163d6 sslContext=javax.net.ssl.SSLContext@2dde1bff sslAuthenticator=oracle.kv.impl.security.ssl.SSLPatternAuthenticator@15bbf42f]>
+2019-05-21 12:36:23.367 UTC INFO - [sn1] Create collector service and register parameter listeners successfully.
+2019-05-21 12:36:23.379 UTC INFO - [sn1] admin1: Starting AdminService
+2019-05-21 12:36:23.377 UTC INFO - [sn1] Started MasterRebalanceThread
+2019-05-21 12:36:23.425 UTC INFO - [sn1] Using java program: /usr/lib/jvm/java-11-openjdk-amd64/bin/java to execute managed processes
+2019-05-21 12:36:23.428 UTC INFO - [sn1] Executing process with arguments: [/usr/lib/jvm/java-11-openjdk-amd64/bin/java, -cp, lib/kvstore.jar, -XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -server, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1, oracle.kv.impl.sna.ManagedService, -root, ./kvroot/kvstore/sn1, -secdir, /home/ankh/Devel/nosql/kv-18.1.19/kvroot/security, -store, kvstore, -class, Admin, -service, admin1] with environment: {MALLOC_ARENA_MAX=1}
+2019-05-21 12:36:23.429 UTC INFO - [sn1] admin1: ProcessMonitor: startProcess
+2019-05-21 12:36:23.430 UTC INFO - [sn1] admin1: Started AdminService
+2019-05-21 12:36:23.432 UTC INFO - [sn1] rg1-rn1: Skipping automatic start of stopped RepNode 
+2019-05-21 12:36:23.446 UTC INFO - [sn1] Starting MonitorAgent.  Server socket factory:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@2e4b8173 sslContext=javax.net.ssl.SSLContext@70e8f8e sslAuthenticator=null]> Client socket factory:<SSLClientSocketFactory name=kvstore|sn|monitor id=1557685148 connectMs=10000 readMs=5000 kvStoreName=null clientUse=USER>
+2019-05-21 12:36:23.493 UTC INFO - [sn1] Successfully created secure proxy for the storage node agent
+2019-05-21 12:36:23.549 UTC INFO - [sn1] Rebound to registry port 5000 using name sn1 with SSF:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@2e4b8173 sslContext=javax.net.ssl.SSLContext@70e8f8e sslAuthenticator=null]>
+2019-05-21 12:36:23.549 UTC INFO - [sn1] Service status changed from STARTING to RUNNING
+2019-05-21 12:36:26.612 UTC INFO - [admin1] [sn1] Service status: RUNNING 2019-05-21 12:36:23 UTC
+2019-05-21 12:36:23.549 UTC INFO - [sn1] Started StorageNodeAgent for kvstore
+2019-05-21 12:36:26.791 UTC INFO - [admin1] Exit Thread[System table monitor,5,main]
+2019-05-21 12:36:26.912 UTC INFO - [sn1] admin1: ProcessMonitor: ManagedServiceStarted: admin1
+2019-05-21 12:36:46.389 UTC INFO - [admin1] [admin1] rg1-rn1: Service status: UNREACHABLE 2019-05-21 12:36:46 UTC
+2019-05-21 12:37:23.382 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:38:23.383 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:39:23.384 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:40:23.385 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:41:23.386 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:42:23.386 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:43:23.387 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:44:23.387 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:45:23.388 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:46:24.980 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:47:24.981 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:48:24.981 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:49:24.982 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:50:24.983 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:51:24.984 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:52:24.985 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:53:24.985 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 12:54:24.986 UTC INFO - [sn1] Acquiring initial topology from RNs

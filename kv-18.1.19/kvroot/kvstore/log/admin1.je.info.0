@@ -208,3 +208,20 @@
 2019-05-21 03:03:36.084 UTC INFO [1] Election thread exited. Group master: 1(1)
 2019-05-21 03:03:36.084 UTC INFO [1] Feeder manager accepting requests.
 2019-05-21 03:03:36.085 UTC INFO [1] Joining group as master
+2019-05-21 12:36:24.094 UTC INFO [1] No server auth method
+2019-05-21 12:36:24.098 UTC INFO [1] Started ServiceDispatcher. HostPort=ubuntu:5005
+2019-05-21 12:36:24.106 UTC INFO [1] DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 12:36:24.116 UTC INFO [1] DTVLSN at start:741
+2019-05-21 12:36:24.117 UTC INFO [1] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 12:36:24.125 UTC INFO [1] Current group size: 1
+2019-05-21 12:36:24.125 UTC INFO [1] Existing node 1 querying for a current master.
+2019-05-21 12:36:24.238 UTC INFO [1] Node 1 started
+2019-05-21 12:36:24.239 UTC INFO [1] Election initiated; election #1
+2019-05-21 12:36:24.241 UTC INFO [1] Started election thread Tue May 21 05:36:24 PDT 2019
+2019-05-21 12:36:26.267 UTC INFO [1] Winning proposal: Proposal(0000016ada649601:54a2167f1a4da3aeb0de3ac919ee1fe6:00000001) Value: Value:ubuntu$$$5005$$$1$$$1
+2019-05-21 12:36:26.281 UTC INFO [1] Master changed to 1
+2019-05-21 12:36:26.282 UTC INFO [1] Election finished. Elapsed time: 2043ms
+2019-05-21 12:36:26.282 UTC INFO [1] node:1(1) state change from UNKNOWN to MASTER
+2019-05-21 12:36:26.283 UTC INFO [1] Election thread exited. Group master: 1(1)
+2019-05-21 12:36:26.283 UTC INFO [1] Feeder manager accepting requests.
+2019-05-21 12:36:26.285 UTC INFO [1] Joining group as master

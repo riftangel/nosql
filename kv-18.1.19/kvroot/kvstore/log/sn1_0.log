@@ -350,3 +350,39 @@
 2019-05-21 03:08:06.138 UTC INFO [sn1] generate status change: rg1-rn1: Service status: STOPPED 2019-05-21 03:08:06 UTC
 2019-05-21 03:08:06.138 UTC INFO [sn1] rg1-rn1: ProcessMonitor: not restarting
 2019-05-21 03:08:06.138 UTC INFO [sn1] rg1-rn1: Stopped RepNode
+2019-05-21 12:36:22.686 UTC INFO [sn1] Starting StorageNodeAgent for kvstore
+2019-05-21 12:36:22.690 UTC INFO [sn1] Creating a Registry on port ubuntu:5000 server socket factory:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@2e4b8173 sslContext=javax.net.ssl.SSLContext@70e8f8e sslAuthenticator=null]>
+2019-05-21 12:36:22.710 UTC INFO [sn1] Using mgmt class oracle.kv.impl.mgmt.NoOpAgent
+2019-05-21 12:36:23.356 UTC INFO [sn1] Bound trusted login to registry port 5000 using name SNA with SSF:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@10163d6 sslContext=javax.net.ssl.SSLContext@2dde1bff sslAuthenticator=oracle.kv.impl.security.ssl.SSLPatternAuthenticator@15bbf42f]>
+2019-05-21 12:36:23.367 UTC INFO [sn1] Create collector service and register parameter listeners successfully.
+2019-05-21 12:36:23.379 UTC INFO [sn1] admin1: Starting AdminService
+2019-05-21 12:36:23.377 UTC INFO [sn1] Started MasterRebalanceThread
+2019-05-21 12:36:23.425 UTC INFO [sn1] Using java program: /usr/lib/jvm/java-11-openjdk-amd64/bin/java to execute managed processes
+2019-05-21 12:36:23.428 UTC INFO [sn1] Executing process with arguments: [/usr/lib/jvm/java-11-openjdk-amd64/bin/java, -cp, lib/kvstore.jar, -XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -server, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1, oracle.kv.impl.sna.ManagedService, -root, ./kvroot/kvstore/sn1, -secdir, /home/ankh/Devel/nosql/kv-18.1.19/kvroot/security, -store, kvstore, -class, Admin, -service, admin1] with environment: {MALLOC_ARENA_MAX=1}
+2019-05-21 12:36:23.429 UTC INFO [sn1] admin1: ProcessMonitor: startProcess
+2019-05-21 12:36:23.430 UTC INFO [sn1] admin1: Started AdminService
+2019-05-21 12:36:23.432 UTC INFO [sn1] rg1-rn1: Skipping automatic start of stopped RepNode 
+2019-05-21 12:36:23.446 UTC INFO [sn1] Starting MonitorAgent.  Server socket factory:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@2e4b8173 sslContext=javax.net.ssl.SSLContext@70e8f8e sslAuthenticator=null]> Client socket factory:<SSLClientSocketFactory name=kvstore|sn|monitor id=1557685148 connectMs=10000 readMs=5000 kvStoreName=null clientUse=USER>
+2019-05-21 12:36:23.493 UTC INFO [sn1] Successfully created secure proxy for the storage node agent
+2019-05-21 12:36:23.549 UTC INFO [sn1] Rebound to registry port 5000 using name sn1 with SSF:<SSLServerSocketFactory backlog=1024 portRange=0,0 sslControl=SSLControl[ sslParameters=javax.net.ssl.SSLParameters@2e4b8173 sslContext=javax.net.ssl.SSLContext@70e8f8e sslAuthenticator=null]>
+2019-05-21 12:36:23.549 UTC INFO [sn1] Service status changed from STARTING to RUNNING
+2019-05-21 12:36:23.549 UTC INFO [sn1] Started StorageNodeAgent for kvstore
+2019-05-21 12:36:26.912 UTC INFO [sn1] admin1: ProcessMonitor: ManagedServiceStarted: admin1
+2019-05-21 12:37:23.382 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:38:23.383 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:39:23.384 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:40:23.385 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:41:23.386 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:42:23.386 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:43:23.387 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:44:23.387 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:45:23.388 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:46:24.980 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:47:24.981 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:48:24.981 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:49:24.982 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:50:24.983 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:51:24.984 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:52:24.985 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:53:24.985 UTC INFO [sn1] Acquiring initial topology from RNs
+2019-05-21 12:54:24.986 UTC INFO [sn1] Acquiring initial topology from RNs
