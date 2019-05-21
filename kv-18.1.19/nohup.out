@@ -1,0 +1,5 @@
+Failed to start SNA: Port already in use: 5000; nested exception is: 
+	java.net.BindException: Address already in use (Bind failed)
+Failed to start SNA: Problem connecting to the storage node agent, which may be caused by a security mismatch between the client and server, or by another network connectivity issue; nested exception is: 
+	java.rmi.ConnectIOException: Exception creating connection to: ubuntu; nested exception is: 
+	java.net.SocketTimeoutException: connect timed out

@@ -1022,3 +1022,444 @@ store=kvstore  numPartitions=10 sequence=14
 2019-05-21 12:36:31.763 UTC INFO [admin1] Session 37355582: extend failed due to expiration
 2019-05-21 12:36:31.816 UTC SEC_INFO [admin1] KVAuditInfo [User: admin, ClientHost: 127.0.0.1, AuthHost: , Operation Desc: LOGIN, Status: SUCCEEDED]
 2019-05-21 12:36:46.389 UTC INFO [admin1] [admin1] rg1-rn1: Service status: UNREACHABLE 2019-05-21 12:36:46 UTC
+2019-05-21 13:23:54.510 UTC INFO [admin1] Starting service process: admin1, Java command line arguments: [-XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1]
+2019-05-21 13:23:54.522 UTC INFO [admin1] JVM java.net.InetAddress properties: cache.ttl=-1 cache.negative.ttl=-1
+2019-05-21 13:23:54.680 UTC INFO [admin1] AdminSecurity: authenticator KERBEROS is not initialized, no implementation found
+2019-05-21 13:23:54.680 UTC INFO [admin1] AdminSecurity: authenticator IDCSOAUTH is not initialized, no implementation found
+2019-05-21 13:23:54.684 UTC INFO [admin1] Starting AdminService
+2019-05-21 13:23:54.769 UTC INFO [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:54.782 UTC INFO [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:54.783 UTC INFO [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:54.791 UTC SEVERE [admin1] Process exiting
+java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+2019-05-21 13:23:54.797 UTC SEVERE [admin1] Exception creating service admin1: Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19): Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19) java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getAdminFaultException(AdminServiceFaultHandler.java:139)
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getThrowException(AdminServiceFaultHandler.java:117)
+	at oracle.kv.impl.fault.ProcessFaultHandler.rethrow(ProcessFaultHandler.java:203)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:154)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+
+2019-05-21 13:23:55.572 UTC INFO [admin1] Starting service process: admin1, Java command line arguments: [-XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1]
+2019-05-21 13:23:55.584 UTC INFO [admin1] JVM java.net.InetAddress properties: cache.ttl=-1 cache.negative.ttl=-1
+2019-05-21 13:23:55.750 UTC INFO [admin1] AdminSecurity: authenticator KERBEROS is not initialized, no implementation found
+2019-05-21 13:23:55.750 UTC INFO [admin1] AdminSecurity: authenticator IDCSOAUTH is not initialized, no implementation found
+2019-05-21 13:23:55.754 UTC INFO [admin1] Starting AdminService
+2019-05-21 13:23:55.840 UTC INFO [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:55.853 UTC INFO [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:55.853 UTC INFO [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:55.862 UTC SEVERE [admin1] Process exiting
+java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+2019-05-21 13:23:55.871 UTC SEVERE [admin1] Exception creating service admin1: Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19): Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19) java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getAdminFaultException(AdminServiceFaultHandler.java:139)
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getThrowException(AdminServiceFaultHandler.java:117)
+	at oracle.kv.impl.fault.ProcessFaultHandler.rethrow(ProcessFaultHandler.java:203)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:154)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+
+2019-05-21 13:23:56.629 UTC INFO [admin1] Starting service process: admin1, Java command line arguments: [-XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1]
+2019-05-21 13:23:56.640 UTC INFO [admin1] JVM java.net.InetAddress properties: cache.ttl=-1 cache.negative.ttl=-1
+2019-05-21 13:23:56.805 UTC INFO [admin1] AdminSecurity: authenticator KERBEROS is not initialized, no implementation found
+2019-05-21 13:23:56.805 UTC INFO [admin1] AdminSecurity: authenticator IDCSOAUTH is not initialized, no implementation found
+2019-05-21 13:23:56.809 UTC INFO [admin1] Starting AdminService
+2019-05-21 13:23:56.895 UTC INFO [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:56.908 UTC INFO [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:56.909 UTC INFO [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:56.917 UTC SEVERE [admin1] Process exiting
+java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+2019-05-21 13:23:56.923 UTC SEVERE [admin1] Exception creating service admin1: Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19): Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19) java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getAdminFaultException(AdminServiceFaultHandler.java:139)
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getThrowException(AdminServiceFaultHandler.java:117)
+	at oracle.kv.impl.fault.ProcessFaultHandler.rethrow(ProcessFaultHandler.java:203)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:154)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+
+2019-05-21 13:23:57.686 UTC INFO [admin1] Starting service process: admin1, Java command line arguments: [-XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1]
+2019-05-21 13:23:57.697 UTC INFO [admin1] JVM java.net.InetAddress properties: cache.ttl=-1 cache.negative.ttl=-1
+2019-05-21 13:23:57.861 UTC INFO [admin1] AdminSecurity: authenticator KERBEROS is not initialized, no implementation found
+2019-05-21 13:23:57.861 UTC INFO [admin1] AdminSecurity: authenticator IDCSOAUTH is not initialized, no implementation found
+2019-05-21 13:23:57.865 UTC INFO [admin1] Starting AdminService
+2019-05-21 13:23:57.951 UTC INFO [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:57.965 UTC INFO [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:57.965 UTC INFO [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:57.973 UTC SEVERE [admin1] Process exiting
+java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+2019-05-21 13:23:57.979 UTC SEVERE [admin1] Exception creating service admin1: Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19): Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19) java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getAdminFaultException(AdminServiceFaultHandler.java:139)
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getThrowException(AdminServiceFaultHandler.java:117)
+	at oracle.kv.impl.fault.ProcessFaultHandler.rethrow(ProcessFaultHandler.java:203)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:154)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+
+2019-05-21 13:23:58.736 UTC INFO [admin1] Starting service process: admin1, Java command line arguments: [-XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1]
+2019-05-21 13:23:58.747 UTC INFO [admin1] JVM java.net.InetAddress properties: cache.ttl=-1 cache.negative.ttl=-1
+2019-05-21 13:23:58.912 UTC INFO [admin1] AdminSecurity: authenticator KERBEROS is not initialized, no implementation found
+2019-05-21 13:23:58.912 UTC INFO [admin1] AdminSecurity: authenticator IDCSOAUTH is not initialized, no implementation found
+2019-05-21 13:23:58.916 UTC INFO [admin1] Starting AdminService
+2019-05-21 13:23:59.002 UTC INFO [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:59.015 UTC INFO [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:59.015 UTC INFO [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:59.023 UTC SEVERE [admin1] Process exiting
+java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+2019-05-21 13:23:59.029 UTC SEVERE [admin1] Exception creating service admin1: Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19): Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19) java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getAdminFaultException(AdminServiceFaultHandler.java:139)
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getThrowException(AdminServiceFaultHandler.java:117)
+	at oracle.kv.impl.fault.ProcessFaultHandler.rethrow(ProcessFaultHandler.java:203)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:154)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+
+2019-05-21 13:23:59.785 UTC INFO [admin1] Starting service process: admin1, Java command line arguments: [-XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1]
+2019-05-21 13:23:59.797 UTC INFO [admin1] JVM java.net.InetAddress properties: cache.ttl=-1 cache.negative.ttl=-1
+2019-05-21 13:23:59.957 UTC INFO [admin1] AdminSecurity: authenticator KERBEROS is not initialized, no implementation found
+2019-05-21 13:23:59.957 UTC INFO [admin1] AdminSecurity: authenticator IDCSOAUTH is not initialized, no implementation found
+2019-05-21 13:23:59.961 UTC INFO [admin1] Starting AdminService
+2019-05-21 13:24:00.049 UTC INFO [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:24:00.062 UTC INFO [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:24:00.062 UTC INFO [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:24:00.071 UTC SEVERE [admin1] Process exiting
+java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+2019-05-21 13:24:00.078 UTC SEVERE [admin1] Exception creating service admin1: Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19): Property: je.rep.nodeHostPort Invalid hostname: ubuntu (18.1.19) java.lang.IllegalArgumentException: Property: je.rep.nodeHostPort Invalid hostname: ubuntu
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:429)
+	at com.sleepycat.je.dbi.DbConfigManager.setVal(DbConfigManager.java:648)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPortVoid(ReplicationConfig.java:1485)
+	at com.sleepycat.je.rep.ReplicationConfig.setNodeHostPort(ReplicationConfig.java:1476)
+	at oracle.kv.impl.param.ParameterUtils.getRepEnvConfig(ParameterUtils.java:361)
+	at oracle.kv.impl.param.ParameterUtils.getAdminRepEnvConfig(ParameterUtils.java:305)
+	at oracle.kv.impl.admin.Admin.createReplicationConfig(Admin.java:664)
+	at oracle.kv.impl.admin.Admin.<init>(Admin.java:509)
+	at oracle.kv.impl.admin.AdminService.startInternal(AdminService.java:242)
+	at oracle.kv.impl.admin.AdminService.access$000(AdminService.java:73)
+	at oracle.kv.impl.admin.AdminService$1.execute(AdminService.java:209)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:152)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+Caused by: java.net.BindException: Can't assign requested address (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:386)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:340)
+	at com.sleepycat.je.rep.impl.RepParams$2.validateValue(RepParams.java:417)
+	... 14 more
+
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getAdminFaultException(AdminServiceFaultHandler.java:139)
+	at oracle.kv.impl.admin.AdminServiceFaultHandler.getThrowException(AdminServiceFaultHandler.java:117)
+	at oracle.kv.impl.fault.ProcessFaultHandler.rethrow(ProcessFaultHandler.java:203)
+	at oracle.kv.impl.fault.ProcessFaultHandler.execute(ProcessFaultHandler.java:154)
+	at oracle.kv.impl.admin.AdminService.start(AdminService.java:205)
+	at oracle.kv.impl.sna.ManagedAdmin.start(ManagedAdmin.java:204)
+	at oracle.kv.impl.sna.ManagedService.main(ManagedService.java:772)
+
+2019-05-21 13:26:11.114 UTC INFO [admin1] Starting service process: admin1, Java command line arguments: [-XX:+DisableExplicitGC, -Xms96M, -Xmx128M, -Dje.rep.skipHelperHostResolution=true-Xlog:gc=info:file=./kvroot/kvstore/log/admin1.gc:time:filecount=10,filesize=1048576, -Dkvdns.networkaddress.cache.ttl=-1]
+2019-05-21 13:26:11.126 UTC INFO [admin1] JVM java.net.InetAddress properties: cache.ttl=-1 cache.negative.ttl=-1
+2019-05-21 13:26:11.286 UTC INFO [admin1] AdminSecurity: authenticator KERBEROS is not initialized, no implementation found
+2019-05-21 13:26:11.286 UTC INFO [admin1] AdminSecurity: authenticator IDCSOAUTH is not initialized, no implementation found
+2019-05-21 13:26:11.290 UTC INFO [admin1] Starting AdminService
+2019-05-21 13:26:11.378 UTC INFO [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:26:11.391 UTC INFO [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:26:11.391 UTC INFO [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:26:11.405 UTC INFO [admin1] DataChannelFactory: ssl
+2019-05-21 13:26:11.407 UTC INFO [admin1] AdminStateTracker thread start: admin1
+2019-05-21 13:26:11.657 UTC INFO [admin1] JE recovery: FIND_END_OF_LOG
+2019-05-21 13:26:11.694 UTC INFO [admin1] JE recovery: FIND_LAST_CKPT
+2019-05-21 13:26:11.698 UTC INFO [admin1] JE recovery: READ_DBMAP_INFO
+2019-05-21 13:26:11.712 UTC INFO [admin1] JE recovery: REDO_DBMAP_INFO
+2019-05-21 13:26:11.714 UTC INFO [admin1] JE recovery: UNDO_DBMAP_RECORDS
+2019-05-21 13:26:11.717 UTC INFO [admin1] JE recovery: REDO_DBMAP_RECORDS
+2019-05-21 13:26:11.723 UTC INFO [admin1] JE recovery: READ_DATA_INFO
+2019-05-21 13:26:11.733 UTC INFO [admin1] JE recovery: REDO_DATA_INFO
+2019-05-21 13:26:11.737 UTC INFO [admin1] JE recovery: UNDO_DATA_RECORDS
+2019-05-21 13:26:11.739 UTC INFO [admin1] JE recovery: REDO_DATA_RECORDS
+2019-05-21 13:26:11.750 UTC INFO [admin1] JE recovery: FINISH_VERIFICATION
+2019-05-21 13:26:11.751 UTC INFO [admin1] JE recovery: POPULATE_UTILIZATION_PROFILE
+2019-05-21 13:26:11.765 UTC INFO [admin1] JE recovery: POPULATE_EXPIRATION_PROFILE
+2019-05-21 13:26:11.788 UTC INFO [admin1] JE recovery: REMOVE_TEMP_DBS
+2019-05-21 13:26:11.807 UTC INFO [admin1] JE recovery: CKPT
+2019-05-21 13:26:11.828 UTC INFO [admin1] JE recovery: RECOVERY_FINISHED
+2019-05-21 13:26:11.852 UTC INFO [admin1] JE: No server auth method
+2019-05-21 13:26:11.854 UTC INFO [admin1] JE: Started ServiceDispatcher. HostPort=localhost:5005
+2019-05-21 13:26:11.855 UTC INFO [admin1] JE: DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 13:26:11.883 UTC INFO [admin1] JE: DTVLSN at start:749
+2019-05-21 13:26:11.883 UTC INFO [admin1] JE: node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 13:26:11.897 UTC INFO [admin1] JE: Current group size: 1
+2019-05-21 13:26:11.897 UTC INFO [admin1] JE: Existing node 1 querying for a current master.
+2019-05-21 13:26:21.918 UTC INFO [admin1] JE recovery: BECOME_CONSISTENT
+2019-05-21 13:26:21.918 UTC INFO [admin1] JE: Node 1 started
+2019-05-21 13:26:21.919 UTC INFO [admin1] JE: Election initiated; election #1
+2019-05-21 13:26:21.921 UTC INFO [admin1] JE: Started election thread Tue May 21 08:26:21 CDT 2019
+2019-05-21 13:26:21.922 UTC INFO [admin1] State change event: Tue May 21 08:26:11 CDT 2019, State: UNKNOWN, Type: PRIMARY, Master: none
+2019-05-21 13:26:21.922 UTC INFO [admin1] AdminStateTracker queue added:UNKNOWN
+2019-05-21 13:26:21.934 UTC INFO [admin1] Initialize stores at schema version 5, readOnly=false
+2019-05-21 13:26:21.938 UTC INFO [admin1] Open: AdminCriticalEventsDatabase
+2019-05-21 13:26:21.940 UTC INFO [admin1] Open: AdminParametersDatabase
+2019-05-21 13:26:21.941 UTC INFO [admin1] Open: AdminMemoDatabase
+2019-05-21 13:26:21.943 UTC INFO [admin1] Open: AdminPlanDatabase
+2019-05-21 13:26:21.944 UTC INFO [admin1] Open: AdminSecurityDatabase
+2019-05-21 13:26:21.945 UTC INFO [admin1] Open: AdminTableDatabase
+2019-05-21 13:26:21.947 UTC INFO [admin1] Open: AdminTopologyHistoryDatabase
+2019-05-21 13:26:21.948 UTC INFO [admin1] Open: AdminTopologyCandidateDatabase
+2019-05-21 13:26:21.949 UTC INFO [admin1] Shutting down monitor collector
+2019-05-21 13:26:21.950 UTC INFO [admin1] Replicated environment handle established. Cache size: 80530636, State: UNKNOWN
+2019-05-21 13:26:21.951 UTC INFO [admin1] Starting admin:LOGIN on rmi://localhost:5000/admin:LOGIN
+2019-05-21 13:26:21.974 UTC INFO [admin1] Successfully created a secure proxy for admin:LOGIN
+2019-05-21 13:26:22.092 UTC INFO [admin1] Starting commandService on rmi://localhost:5000/commandService
+2019-05-21 13:26:22.188 UTC INFO [admin1] Successfully created a secure proxy for commandService
+2019-05-21 13:26:22.279 UTC INFO [admin1] Starting admin:CLIENT_ADMIN on rmi://localhost:5000/admin:CLIENT_ADMIN
+2019-05-21 13:26:22.398 UTC INFO [admin1] Successfully created a secure proxy for admin:CLIENT_ADMIN
+2019-05-21 13:26:22.517 UTC INFO [admin1] Started AdminService

@@ -2091,3 +2091,65 @@ store=kvstore  numPartitions=10 sequence=14
 2019-05-21 12:52:24.985 UTC INFO - [sn1] Acquiring initial topology from RNs
 2019-05-21 12:53:24.985 UTC INFO - [sn1] Acquiring initial topology from RNs
 2019-05-21 12:54:24.986 UTC INFO - [sn1] Acquiring initial topology from RNs
+2019-05-21 13:23:54.769 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:54.782 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:54.783 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:55.840 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:55.853 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:55.853 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:56.895 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:56.908 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:56.909 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:57.951 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:57.965 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:57.965 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:23:59.002 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:23:59.015 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:23:59.015 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:24:00.049 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:24:00.062 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:24:00.062 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:26:11.378 UTC INFO - [admin1] Initializing PRIMARY Admin for store: kvstore
+2019-05-21 13:26:11.391 UTC INFO - [admin1] JVM Runtime maxMemory (bytes): 134217728
+2019-05-21 13:26:11.391 UTC INFO - [admin1] Non-default JE properties for environment: {je.cleaner.threads=2, je.evictor.criticalPercentage=20, je.maxDisk=3221225472, je.cleaner.minUtilization=40, je.log.numBuffers=16, je.lock.timeout=10 s, je.env.runVerifier=false, je.cleaner.readSize=1048576, je.log.writeQueueSize=2097152, je.log.fileCacheSize=2000, je.log.iteratorReadSize=1048576, je.log.fileMax=52428800, je.lock.nLockTables=97, je.env.runEvictor=true, je.cleaner.minFileUtilization=5, je.log.faultReadSize=4096, je.txn.durability=write_no_sync,write_no_sync,simple_majority, je.nodeMaxEntries=128}
+2019-05-21 13:26:11.405 UTC INFO - [admin1] DataChannelFactory: ssl
+2019-05-21 13:26:11.407 UTC INFO - [admin1] AdminStateTracker thread start: admin1
+2019-05-21 13:26:11.657 UTC INFO - [admin1] JE recovery: FIND_END_OF_LOG
+2019-05-21 13:26:11.694 UTC INFO - [admin1] JE recovery: FIND_LAST_CKPT
+2019-05-21 13:26:11.698 UTC INFO - [admin1] JE recovery: READ_DBMAP_INFO
+2019-05-21 13:26:11.712 UTC INFO - [admin1] JE recovery: REDO_DBMAP_INFO
+2019-05-21 13:26:11.714 UTC INFO - [admin1] JE recovery: UNDO_DBMAP_RECORDS
+2019-05-21 13:26:11.717 UTC INFO - [admin1] JE recovery: REDO_DBMAP_RECORDS
+2019-05-21 13:26:11.723 UTC INFO - [admin1] JE recovery: READ_DATA_INFO
+2019-05-21 13:26:11.733 UTC INFO - [admin1] JE recovery: REDO_DATA_INFO
+2019-05-21 13:26:11.737 UTC INFO - [admin1] JE recovery: UNDO_DATA_RECORDS
+2019-05-21 13:26:11.739 UTC INFO - [admin1] JE recovery: REDO_DATA_RECORDS
+2019-05-21 13:26:11.750 UTC INFO - [admin1] JE recovery: FINISH_VERIFICATION
+2019-05-21 13:26:11.751 UTC INFO - [admin1] JE recovery: POPULATE_UTILIZATION_PROFILE
+2019-05-21 13:26:11.765 UTC INFO - [admin1] JE recovery: POPULATE_EXPIRATION_PROFILE
+2019-05-21 13:26:11.788 UTC INFO - [admin1] JE recovery: REMOVE_TEMP_DBS
+2019-05-21 13:26:11.807 UTC INFO - [admin1] JE recovery: CKPT
+2019-05-21 13:26:11.828 UTC INFO - [admin1] JE recovery: RECOVERY_FINISHED
+2019-05-21 13:26:11.852 UTC INFO - [admin1] JE: No server auth method
+2019-05-21 13:26:11.854 UTC INFO - [admin1] JE: Started ServiceDispatcher. HostPort=localhost:5005
+2019-05-21 13:26:11.855 UTC INFO - [admin1] JE: DataChannel factory: com.sleepycat.je.rep.utilint.net.SSLChannelFactory
+2019-05-21 13:26:11.883 UTC INFO - [admin1] JE: DTVLSN at start:749
+2019-05-21 13:26:11.883 UTC INFO - [admin1] JE: node:NullNode(-1) state change from DETACHED to UNKNOWN
+2019-05-21 13:26:11.897 UTC INFO - [admin1] JE: Current group size: 1
+2019-05-21 13:26:11.897 UTC INFO - [admin1] JE: Existing node 1 querying for a current master.
+2019-05-21 13:26:21.918 UTC INFO - [admin1] JE recovery: BECOME_CONSISTENT
+2019-05-21 13:26:21.918 UTC INFO - [admin1] JE: Node 1 started
+2019-05-21 13:26:21.919 UTC INFO - [admin1] JE: Election initiated; election #1
+2019-05-21 13:26:21.921 UTC INFO - [admin1] JE: Started election thread Tue May 21 08:26:21 CDT 2019
+2019-05-21 13:26:21.922 UTC INFO - [admin1] State change event: Tue May 21 08:26:11 CDT 2019, State: UNKNOWN, Type: PRIMARY, Master: none
+2019-05-21 13:26:21.922 UTC INFO - [admin1] AdminStateTracker queue added:UNKNOWN
+2019-05-21 13:26:21.934 UTC INFO - [admin1] Initialize stores at schema version 5, readOnly=false
+2019-05-21 13:26:21.938 UTC INFO - [admin1] Open: AdminCriticalEventsDatabase
+2019-05-21 13:26:21.940 UTC INFO - [admin1] Open: AdminParametersDatabase
+2019-05-21 13:26:21.941 UTC INFO - [admin1] Open: AdminMemoDatabase
+2019-05-21 13:26:21.943 UTC INFO - [admin1] Open: AdminPlanDatabase
+2019-05-21 13:26:21.944 UTC INFO - [admin1] Open: AdminSecurityDatabase
+2019-05-21 13:26:21.945 UTC INFO - [admin1] Open: AdminTableDatabase
+2019-05-21 13:26:21.947 UTC INFO - [admin1] Open: AdminTopologyHistoryDatabase
+2019-05-21 13:26:21.948 UTC INFO - [admin1] Open: AdminTopologyCandidateDatabase
+2019-05-21 13:26:21.949 UTC FINE - Closing StorewideLoggingView

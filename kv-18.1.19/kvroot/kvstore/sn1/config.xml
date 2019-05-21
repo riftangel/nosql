@@ -21,12 +21,12 @@
     <property name="createCSV" value="false" type="BOOLEAN"/>
     <property name="disabled" value="false" type="BOOLEAN"/>
     <property name="eventExpiryAge" value="30 DAYS" type="DURATION"/>
-    <property name="helperHosts" value="ubuntu:5005" type="STRING"/>
+    <property name="helperHosts" value="localhost:5005" type="STRING"/>
     <property name="hideUserData" value="true" type="BOOLEAN"/>
     <property name="loggingConfigProps" value="" type="STRING"/>
     <property name="maxTopoChanges" value="1000" type="INT"/>
     <property name="newRNRetryTime" value="10 MINUTES" type="DURATION"/>
-    <property name="nodeHostPort" value="ubuntu:5005" type="STRING"/>
+    <property name="nodeHostPort" value="localhost:5005" type="STRING"/>
     <property name="numGCLogFiles" value="10" type="INT"/>
     <property name="storageNodeId" value="1" type="INT"/>
     <property name="useClientSocketFactories" value="true" type="BOOLEAN"/>
@@ -55,7 +55,7 @@
     <property name="commitLagThreshold" value="0" type="LONG"/>
     <property name="configProperties" value="" type="STRING"/>
     <property name="disabled" value="true" type="BOOLEAN"/>
-    <property name="helperHosts" value="ubuntu:5006" type="STRING"/>
+    <property name="helperHosts" value="localhost:5006" type="STRING"/>
     <property name="hideUserData" value="true" type="BOOLEAN"/>
     <property name="javaMiscParams" value=" -XX:ParallelGCThreads=4" type="STRING"/>
     <property name="jeNodePriority" value="1" type="INT"/>
@@ -63,7 +63,7 @@
     <property name="loggingConfigProps" value="" type="STRING"/>
     <property name="masterBalance" value="true" type="BOOLEAN"/>
     <property name="maxTrackedLatency" value="1000 MILLISECONDS" type="DURATION"/>
-    <property name="nodeHostPort" value="ubuntu:5006" type="STRING"/>
+    <property name="nodeHostPort" value="localhost:5006" type="STRING"/>
     <property name="repNodeId" value="rg1-rn1" type="STRING"/>
     <property name="requestQuiesceTime" value="60 SECONDS" type="DURATION"/>
     <property name="rnAdminSOBacklog" value="1024" type="INT"/>
@@ -143,9 +143,9 @@
     <property name="gcThreadFloor" value="4" type="INT"/>
     <property name="gcThreadPercent" value="62" type="INT"/>
     <property name="gcThreadThreshold" value="8" type="INT"/>
-    <property name="haHostname" value="ubuntu" type="STRING"/>
+    <property name="haHostname" value="localhost" type="STRING"/>
     <property name="haPortRange" value="5005,5007" type="STRING"/>
-    <property name="hostname" value="ubuntu" type="STRING"/>
+    <property name="hostname" value="localhost" type="STRING"/>
     <property name="linkExecWait" value="200 SECONDS" type="DURATION"/>
     <property name="masterBalance" value="true" type="BOOLEAN"/>
     <property name="maxLinkCount" value="500" type="INT"/>
