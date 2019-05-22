@@ -21,12 +21,12 @@
     <property name="createCSV" value="false" type="BOOLEAN"/>
     <property name="disabled" value="false" type="BOOLEAN"/>
     <property name="eventExpiryAge" value="30 DAYS" type="DURATION"/>
-    <property name="helperHosts" value="ubuntu:5005" type="STRING"/>
+    <property name="helperHosts" value="slc10zbn:5005" type="STRING"/>
     <property name="hideUserData" value="true" type="BOOLEAN"/>
     <property name="loggingConfigProps" value="" type="STRING"/>
     <property name="maxTopoChanges" value="1000" type="INT"/>
     <property name="newRNRetryTime" value="10 MINUTES" type="DURATION"/>
-    <property name="nodeHostPort" value="ubuntu:5005" type="STRING"/>
+    <property name="nodeHostPort" value="slc10zbn:5005" type="STRING"/>
     <property name="numGCLogFiles" value="10" type="INT"/>
     <property name="storageNodeId" value="1" type="INT"/>
     <property name="useClientSocketFactories" value="true" type="BOOLEAN"/>
@@ -39,13 +39,13 @@
   <component name="adminMountPoints" type="bootstrapParams" validate="false">
   </component>
   <component name="globalParams" type="globalParams" validate="true">
-    <property name="isLoopback" value="true" type="BOOLEAN"/>
+    <property name="isLoopback" value="false" type="BOOLEAN"/>
     <property name="storeName" value="kvstore" type="STRING"/>
     <property name="storeSoftwareVersion" value="18.1.19" type="STRING"/>
     <property name="userExternalAuth" value="NONE" type="AUTHMETHODS"/>
   </component>
   <component name="mountPoints" type="bootstrapParams" validate="false">
-    <property name="/home/ankh/nosql/kv-18.1.19/./kvroot/kvstore/sn1" value="1 GB" type="SIZE"/>
+    <property name="/scratch/mirivier/view_storage/mirivier_x8cc/ecs/exacloud/stage2/exacloud/nosql/kv-18.1.19/./kvroot/kvstore/sn1" value="1 GB" type="SIZE"/>
   </component>
   <component name="rg1-rn1" type="repNodeParams" validate="true">
     <property name="activeThreshold" value="2147483647" type="INT"/>
@@ -54,8 +54,8 @@
     <property name="collectEnvStats" value="true" type="BOOLEAN"/>
     <property name="commitLagThreshold" value="0" type="LONG"/>
     <property name="configProperties" value="" type="STRING"/>
-    <property name="disabled" value="true" type="BOOLEAN"/>
-    <property name="helperHosts" value="ubuntu:5006" type="STRING"/>
+    <property name="disabled" value="false" type="BOOLEAN"/>
+    <property name="helperHosts" value="slc10zbn:5006" type="STRING"/>
     <property name="hideUserData" value="true" type="BOOLEAN"/>
     <property name="javaMiscParams" value=" -XX:ParallelGCThreads=4" type="STRING"/>
     <property name="jeNodePriority" value="1" type="INT"/>
@@ -63,7 +63,7 @@
     <property name="loggingConfigProps" value="" type="STRING"/>
     <property name="masterBalance" value="true" type="BOOLEAN"/>
     <property name="maxTrackedLatency" value="1000 MILLISECONDS" type="DURATION"/>
-    <property name="nodeHostPort" value="ubuntu:5006" type="STRING"/>
+    <property name="nodeHostPort" value="slc10zbn:5006" type="STRING"/>
     <property name="repNodeId" value="rg1-rn1" type="STRING"/>
     <property name="requestQuiesceTime" value="60 SECONDS" type="DURATION"/>
     <property name="rnAdminSOBacklog" value="1024" type="INT"/>
@@ -87,7 +87,7 @@
     <property name="rnMonitorSOBacklog" value="1024" type="INT"/>
     <property name="rnMonitorSOConnectTimeout" value="10 SECONDS" type="DURATION"/>
     <property name="rnMonitorSOReadTimeout" value="10 SECONDS" type="DURATION"/>
-    <property name="rnMountPoint" value="/home/ankh/nosql/kv-18.1.19/./kvroot/kvstore/sn1" type="STRING"/>
+    <property name="rnMountPoint" value="/scratch/mirivier/view_storage/mirivier_x8cc/ecs/exacloud/stage2/exacloud/nosql/kv-18.1.19/./kvroot/kvstore/sn1" type="STRING"/>
     <property name="rnMountPointSize" value="1073741824" type="SIZE"/>
     <property name="rnNRConfigRetainLogFiles" value="false" type="BOOLEAN"/>
     <property name="rnNodeLimitPercent" value="85" type="INT"/>
@@ -143,9 +143,9 @@
     <property name="gcThreadFloor" value="4" type="INT"/>
     <property name="gcThreadPercent" value="62" type="INT"/>
     <property name="gcThreadThreshold" value="8" type="INT"/>
-    <property name="haHostname" value="ubuntu" type="STRING"/>
+    <property name="haHostname" value="slc10zbn" type="STRING"/>
     <property name="haPortRange" value="5005,5007" type="STRING"/>
-    <property name="hostname" value="ubuntu" type="STRING"/>
+    <property name="hostname" value="slc10zbn" type="STRING"/>
     <property name="linkExecWait" value="200 SECONDS" type="DURATION"/>
     <property name="masterBalance" value="true" type="BOOLEAN"/>
     <property name="maxLinkCount" value="500" type="INT"/>
