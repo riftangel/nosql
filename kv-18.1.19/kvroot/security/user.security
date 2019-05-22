@@ -1,9 +1,0 @@
-#Tue May 21 08:37:01 PDT 2019
-oracle.kv.ssl.trustStore=client.trust
-oracle.kv.ssl.trustStoreType=JKS
-oracle.kv.transport=ssl
-oracle.kv.auth.username=admin
-oracle.kv.ssl.protocols=TLSv1.2,TLSv1.1,TLSv1
-oracle.kv.ssl.hostnameVerifier=dnmatch(CN\=NoSQL)
-oracle.kv.ssl.keyStoreType=JKS
-oracle.kv.auth.pwdfile.file=user.passwd
