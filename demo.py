@@ -1,6 +1,7 @@
 """
 Usefull shorcuts:
 
+    export PYTHONPATH=$PWD/lib/python2.7/site-packages
     java -Doracle.kv.security=/home/ankh/nosql/kv-18.1.19/kvroot/security/user.security -jar lib/kvstore.jar runadmin -host localhost -port 5000
 
 """
@@ -49,6 +50,21 @@ def open_store():
         logging.error("Store connection failed.")
         logging.error(ce.message)
         sys.exit(-1)
+
+def do_store_insert_big(store, aString):
+
+    row_d = {  'uuid' : str(uuid.uuid1()),
+               'desc' : aString,
+               'desc2' : aString,
+               'count' : 5,
+               'percentage' : 0.2173913}
+    row = Row(row_d)
+    try:
+        store.put("Users2", row)
+        logging.debug("Store write succeeded.")
+    except IllegalArgumentException, iae:
+        logging.error("Could not write table.")
+        logging.error(iae.message)
 
 def do_store_insert(store):
 
@@ -101,6 +117,12 @@ def iter_fn(err, iterator):
 
 if __name__ == '__main__':
     print '*** NOSQL Python test driver (c) 2019'
+
+    recreate_default_table = False
+    perform_insert_default_table = False
+    dump_content_default_table = False
+    perform_insert_big_data_default_table = False
+
     setup_logging()
     store = open_store()
     print '*** We are in business ...'
@@ -108,16 +130,30 @@ if __name__ == '__main__':
     res = store.execute_sync("show tables")
     print 'execute : ', res['is_done'], res['error_message']
 
-    #do_store_ops(store)
+    if recreate_default_table:
+    	do_store_ops(store)
 
-    for i in range(0,100000):
-        do_store_insert(store)
+    if perform_insert_default_table:
+        for i in range(0,100000):
+            do_store_insert(store)
 
-    print store.execute_sync("SELECT uuid, desc FROM Users2")
+    rootLogger = logging.getLogger("nosqldb")
+    rootLogger.setLevel(logging.INFO)
 
-    rows = store.table_iterator("Users2", {}, False)
-    for elt in rows:
-        print elt['uuid']
+    if perform_insert_big_data_default_table:
+        _str = 'Simple string which gotta grow big !!! ...'
+	for i in range(0,100):
+	    do_store_insert_big(store, _str)
+            _str = _str + _str
+            print 'LEN:', len(_str)
+
+    res = store.execute_sql("SELECT uuid, desc FROM Users2")
+    print type(res), res
+
+    if dump_content_default_table:
+        rows = store.table_iterator("Users2", {}, False)
+        for elt in rows:
+            print elt['uuid']
 
     store.close()
     print '*** Store is now close ...'
