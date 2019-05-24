@@ -32,6 +32,9 @@ import sys
 import uuid
 import datetime
 
+
+gSecurity = False
+
 def ddn():
     return datetime.datetime.now()
 
@@ -77,9 +80,11 @@ def setup_logging():
 def open_store():
     try:
         kvproxyconfig = ProxyConfig()
-        kvproxyconfig.set_security_props_file('kv-18.1.19/kvroot/security/user.security')
+        if gSecurity:
+            kvproxyconfig.set_security_props_file('kv-18.1.19/kvroot/security/user.security')
         kvstoreconfig = StoreConfig('kvstore', [storehost])
-        kvstoreconfig.set_user("admin")
+        if gSecurity:
+            kvstoreconfig.set_user("admin")
         return Factory.open(proxy, kvstoreconfig,kvproxyconfig)
     except ConnectionException, ce:
         logging.error("Store connection failed.")
@@ -100,7 +105,7 @@ def do_store_insert_request(store, aDict):
         'lock'        : _dict['lock'],
         'params'      : _dict['params'],
         'starttime'   : _dict['starttime'],
-        'staus'       : _dict['status'],
+        'status'       : _dict['status'],
         'statusinfo'  : _dict['statusinfo'],
         'uuid'        : _dict['uuid'],
         'xml'         : _dict['xml']
@@ -139,7 +144,7 @@ def do_store_create_request(store):
                 clustername STRING,
                 lock      STRING,
                 data      STRING,
-                PRIMARY KEY (uuid) )"""  # type: str
+                PRIMARY KEY (uuid, cmdtype, status, error) )"""  # type: str
     try:
         store.execute_sync(_ddl)
         logging.debug("Table creation succeeded")
@@ -287,13 +292,15 @@ if __name__ == '__main__':
             for elt in rows:
                 print elt['uuid']
 
+    #
+    # Create Requests tables and associated INDEXES
+    #
     if False:
         do_store_create_request(store)
         store.execute_sync("CREATE INDEX IF NOT EXISTS UUIDX2 ON requests (uuid)")
-
-    if False:
         store.execute_sync("CREATE INDEX IF NOT EXISTS CMDT ON requests (cmdtype)")
-
+        store.execute_sync("CREATE INDEX IF NOT EXISTS CMDT ON requests (status)")
+        store.execute_sync("CREATE INDEX IF NOT EXISTS CMDT ON requests (error)")
     #
     # Load requests table
     #
@@ -336,7 +343,8 @@ if __name__ == '__main__':
         _mro = MultiRowOptions({ONDB_FIELD_RANGE: _fr})
         _mro = None
 
-        row_list = store.index_iterator("requests", "CMDT", {'cmdtype' : 'cluctrl.info'}, False, _mro, _tio)
+        ##row_list = store.index_iterator("requests", "CMDT", {'cmdtype' : 'cluctrl.info'}, False, _mro, _tio)
+        row_list = store.index_iterator("requests", "CMDT", {'cmdtype': 'cluctrl.info'}, False, _mro, _tio)
         c1=ddn()
         if row_list:
             for row in row_list:
@@ -345,8 +353,19 @@ if __name__ == '__main__':
         et = c2 - c1
         print et.seconds, et.microseconds
 
-    _rc = store.execute_sync("select uuid, cmdtype, starttime, endtime from requests where cmdtype != 'cluctrl.collect_log' and cmdtype != 'cluctrl.info'")
-    print _rc
+    if True:
+        rows = store.table_iterator("requests", {}, False)
+        print '*** ROWS:', rows
+        c1 = ddn()
+        for elt in rows:
+            if elt['cmdtype'] not in ['cluctrl.info', 'cluctrl.collect_log']:
+                print 'ITER:', elt['uuid'], elt['cmdtype'], elt['starttime'], elt['endtime']
+        c2 = ddn()
+        et = c2 - c1
+        print et.seconds, et.microseconds
+
+    ##_rc = store.execute_sync("select uuid, cmdtype, starttime, endtime from requests where cmdtype != 'cluctrl.collect_log' and cmdtype != 'cluctrl.info'")
+    ##print _rc
 
     store.close()
     print '*** Store is now close ...'
