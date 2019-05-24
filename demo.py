@@ -16,6 +16,10 @@ from nosqldb import Row
 import logging
 import sys
 import uuid
+import datetime
+
+def ddn():
+    return datetime.datetime.now()
 
 storehost = "localhost:5000"
 proxy = "localhost:7010"
@@ -72,9 +76,9 @@ def do_store_insert_request(store, aDict):
 
     _dict = aDict
     row_d = {
-        'body' : _dict['body'],
+        'body'        : _dict['body'],
         'clustername' : _dict['clustername'],
-        'cmdtype' : _dict['cmdtype'],
+        'cmdtype'     : _dict['cmdtype'],
         'data'        : _dict['data'],
         'endtime'     : _dict['endtime'],
         'error'       : _dict['error'],
@@ -87,8 +91,24 @@ def do_store_insert_request(store, aDict):
         'uuid'        : _dict['uuid'],
         'xml'         : _dict['xml']
     }
+    row = Row(row_d)
+    try:
+        store.put("requests", row)
+        logging.debug("Store write succeeded.")
+    except IllegalArgumentException, iae:
+        logging.error("Could not write table.")
+        logging.error(iae.message)
 
 def do_store_create_request(store):
+
+    try:
+        ddl = """DROP TABLE IF EXISTS requests"""
+        store.execute_sync(ddl)
+        logging.debug("Table drop succeeded")
+    except IllegalArgumentException, iae:
+        logging.error("DDL failed.")
+        logging.error(iae.message)
+        return
 
     _ddl = """CREATE TABLE requests (
                 uuid STRING,
@@ -233,21 +253,65 @@ if __name__ == '__main__':
             _str = _str + _str
             print 'LEN:', len(_str)
 
-    res = store.execute_sync("SELECT uuid, desc FROM Users2")
-    print type(res), res
+    if False:
+        res = store.execute_sync("SELECT uuid, desc FROM Users2")
+        print type(res), res
 
-    do_store_delete(store)
+    if False:
+        do_store_delete(store)
 
-    do_store_create_index(store)
-    row_list = store.index_iterator("Users2", "UUIDX", {}, False)
-    if row_list:
-        for row in row_list:
-            print row['uuid']
+    if False:
+        do_store_create_index(store)
+        row_list = store.index_iterator("Users2", "UUIDX", {}, False)
+        if row_list:
+            for row in row_list:
+                print row['uuid']
 
-    if dump_content_default_table:
-        rows = store.table_iterator("Users2", {}, False)
+    if False:
+        if dump_content_default_table:
+            rows = store.table_iterator("Users2", {}, False)
+            for elt in rows:
+                print elt['uuid']
+
+    if False:
+        do_store_create_request(store)
+        store.execute_sync("CREATE INDEX IF NOT EXISTS UUIDX2 ON requests (uuid)")
+
+    #
+    # Load requests table
+    #
+    if False:
+        f=open('requests.db.txt')
+        d=f.read()
+        f.close()
+        _x = eval(d)
+        for _entry in _x:
+            print '*** ENTRY:', _entry['uuid']
+            do_store_insert_request(store,_entry)
+    #
+    # Dump requests table
+    #
+    if True:
+        rows = store.table_iterator("requests", {}, False)
+        print '*** ROWS:', rows
+        c1=ddn()
         for elt in rows:
-            print elt['uuid']
+            continue
+            print 'ITER:', elt['uuid']
+        c2=ddn()
+        et=c2-c1
+        print et.seconds, et.microseconds
+
+    if True:
+        row_list = store.index_iterator("requests", "UUIDX2", {}, False)
+        c1=ddn()
+        if row_list:
+            for row in row_list:
+                continue
+                print 'INDEX:', row['uuid']
+        c2 = ddn()
+        et = c2 - c1
+        print et.seconds, et.microseconds
 
     store.close()
     print '*** Store is now close ...'
