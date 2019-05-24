@@ -38,6 +38,23 @@ def setup_logging():
     rootLogger.addHandler(logger)
     rootLogger.addHandler(errlogger)
 
+
+    rootLogger = logging.getLogger()
+    rootLogger.setLevel(logging.DEBUG)
+
+    logger = logging.StreamHandler(sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    errlogger = logging.StreamHandler(sys.stderr)
+    errlogger.setLevel(logging.ERROR)
+
+    formatter = logging.Formatter('\t%(levelname)s - %(message)s')
+    logger.setFormatter(formatter)
+    errlogger.setFormatter(formatter)
+
+    rootLogger.addHandler(logger)
+    rootLogger.addHandler(errlogger)
+
 # configure and open the store
 def open_store():
     try:
@@ -50,6 +67,51 @@ def open_store():
         logging.error("Store connection failed.")
         logging.error(ce.message)
         sys.exit(-1)
+
+def do_store_insert_request(store, aDict):
+
+    _dict = aDict
+    row_d = {
+        'body' : _dict['body'],
+        'clustername' : _dict['clustername'],
+        'cmdtype' : _dict['cmdtype'],
+        'data'        : _dict['data'],
+        'endtime'     : _dict['endtime'],
+        'error'       : _dict['error'],
+        'error_str'   : _dict['error_str'],
+        'lock'        : _dict['lock'],
+        'params'      : _dict['params'],
+        'starttime'   : _dict['starttime'],
+        'staus'       : _dict['status'],
+        'statusinfo'  : _dict['statusinfo'],
+        'uuid'        : _dict['uuid'],
+        'xml'         : _dict['xml']
+    }
+
+def do_store_create_request(store):
+
+    _ddl = """CREATE TABLE requests (
+                uuid STRING,
+                status STRING,
+                starttime STRING,
+                endtime STRING,
+                cmdtype STRING,
+                params STRING,
+                error STRING,
+                error_str STRING,
+                body STRING,
+                xml STRING,
+                statusinfo STRING,
+                clustername STRING,
+                lock STRING,
+                data STRING,
+                PRIMARY KEY (uuid) )"""  # type: str
+    try:
+        store.execute_sync(_ddl)
+        logging.debug("Table creation succeeded")
+    except IllegalArgumentException, iae:
+        logging.error("DDL failed.")
+        logging.error(iae.message)
 
 def do_store_insert_big(store, aString):
 
@@ -104,6 +166,7 @@ def do_store_ops(store):
             myBool BOOLEAN DEFAULT FALSE,
             PRIMARY KEY (SHARD(id, firstName), lastName)
         )"""
+        # Users2
         ddl = """CREATE TABLE Users2 ( uuid STRING, desc STRING, count INTEGER, percentage FLOAT, PRIMARY KEY (uuid) )"""
         ### ddl = """CREATE TABLE Users2 ( zip INTEGER CHECK(zip<300), PRIMARY KEY (zip))"""
         store.execute_sync(ddl)
@@ -112,11 +175,33 @@ def do_store_ops(store):
         logging.error("DDL failed.")
         logging.error(iae.message)
 
+def do_store_update(self):
+    pass
+
+def do_store_delete(store):
+
+    _uuid  = str(uuid.uuid1())
+    _table = "Users2"
+    _pkey  =  {"uuid" : _uuid }
+
+    try:
+        rc = store.delete(_table, _pkey)
+        if rc[0]:
+            logging.debug("Row deletion succeeded.")
+        else:
+            logging.debug("Row deletion failed.")
+    except IllegalArgumentException, iae:
+        logging.error("Row deletion failed (except).")
+        logging.error(iae.message)
+
+def do_store_create_index(store):
+
+    store.execute_sync("CREATE INDEX IF NOT EXISTS UUIDX ON Users2 (uuid)")
+
 def iter_fn(err, iterator):
     print err, iterator
 
 if __name__ == '__main__':
-    print '*** NOSQL Python test driver (c) 2019'
 
     recreate_default_table = False
     perform_insert_default_table = False
@@ -124,6 +209,7 @@ if __name__ == '__main__':
     perform_insert_big_data_default_table = False
 
     setup_logging()
+    logging.debug('*** NOSQL Python test driver (c) 2019')
     store = open_store()
     print '*** We are in business ...'
 
@@ -131,24 +217,32 @@ if __name__ == '__main__':
     print 'execute : ', res['is_done'], res['error_message']
 
     if recreate_default_table:
-    	do_store_ops(store)
+        do_store_ops(store)
 
     if perform_insert_default_table:
         for i in range(0,100000):
             do_store_insert(store)
 
-    rootLogger = logging.getLogger("nosqldb")
-    rootLogger.setLevel(logging.INFO)
+    #rootLogger = logging.getLogger("nosqldb")
+    #rootLogger.setLevel(logging.INFO)
 
     if perform_insert_big_data_default_table:
         _str = 'Simple string which gotta grow big !!! ...'
-	for i in range(0,100):
-	    do_store_insert_big(store, _str)
+        for i in range(0,10):
+            do_store_insert_big(store, _str)
             _str = _str + _str
             print 'LEN:', len(_str)
 
-    res = store.execute_sql("SELECT uuid, desc FROM Users2")
+    res = store.execute_sync("SELECT uuid, desc FROM Users2")
     print type(res), res
+
+    do_store_delete(store)
+
+    do_store_create_index(store)
+    row_list = store.index_iterator("Users2", "UUIDX", {}, False)
+    if row_list:
+        for row in row_list:
+            print row['uuid']
 
     if dump_content_default_table:
         rows = store.table_iterator("Users2", {}, False)
