@@ -13,6 +13,20 @@ from nosqldb import StoreConfig
 from nosqldb import ProxyConfig
 from nosqldb import Row
 
+from nosqldb.utilities import ONDB_DIRECTION
+from nosqldb.utilities import ONDB_FORWARD
+from nosqldb import Direction
+
+
+from nosqldb.utilities import ONDB_FIELD
+from nosqldb.utilities import ONDB_START_VALUE
+from nosqldb.utilities import ONDB_END_VALUE
+from nosqldb.utilities import ONDB_FIELD_RANGE
+
+from nosqldb import FieldRange
+from nosqldb import MultiRowOptions
+from nosqldb import TableIteratorOptions
+
 import logging
 import sys
 import uuid
@@ -111,20 +125,20 @@ def do_store_create_request(store):
         return
 
     _ddl = """CREATE TABLE requests (
-                uuid STRING,
-                status STRING,
+                uuid      STRING,
+                status    STRING,
                 starttime STRING,
-                endtime STRING,
-                cmdtype STRING,
-                params STRING,
-                error STRING,
+                endtime   STRING,
+                cmdtype   STRING,
+                params    STRING,
+                error     STRING,
                 error_str STRING,
-                body STRING,
-                xml STRING,
+                body      STRING,
+                xml       STRING,
                 statusinfo STRING,
                 clustername STRING,
-                lock STRING,
-                data STRING,
+                lock      STRING,
+                data      STRING,
                 PRIMARY KEY (uuid) )"""  # type: str
     try:
         store.execute_sync(_ddl)
@@ -277,6 +291,9 @@ if __name__ == '__main__':
         do_store_create_request(store)
         store.execute_sync("CREATE INDEX IF NOT EXISTS UUIDX2 ON requests (uuid)")
 
+    if False:
+        store.execute_sync("CREATE INDEX IF NOT EXISTS CMDT ON requests (cmdtype)")
+
     #
     # Load requests table
     #
@@ -291,27 +308,45 @@ if __name__ == '__main__':
     #
     # Dump requests table
     #
-    if True:
-        rows = store.table_iterator("requests", {}, False)
+    if False:
+
+        _direction = Direction( {ONDB_DIRECTION:ONDB_FORWARD} )
+        _tio = TableIteratorOptions( {ONDB_DIRECTION:_direction} )
+
+        _fr = FieldRange( {ONDB_FIELD : "cmdtype", ONDB_START_VALUE : 'vmgi_aaa', ONDB_END_VALUE : 'vmgi_zzz'})
+        _mro = MultiRowOptions( { ONDB_FIELD_RANGE : _fr })
+
+        _mro = None
+
+        rows = store.table_iterator("requests", {}, False, _mro, _tio)
         print '*** ROWS:', rows
         c1=ddn()
         for elt in rows:
-            continue
-            print 'ITER:', elt['uuid']
+            if elt['cmdtype'] not in ['cluctrl.info', 'cluctrl.collect_log']:
+                print 'ITER:', elt['uuid'], elt['cmdtype'], elt['starttime'], elt['endtime']
         c2=ddn()
         et=c2-c1
         print et.seconds, et.microseconds
 
-    if True:
-        row_list = store.index_iterator("requests", "UUIDX2", {}, False)
+    if False:
+        _direction = Direction({ONDB_DIRECTION: ONDB_FORWARD})
+        _tio = TableIteratorOptions({ONDB_DIRECTION: _direction})
+
+        _fr = FieldRange({ONDB_FIELD: "cmdtype", ONDB_START_VALUE: 'cluctrl.d', ONDB_END_VALUE: 'cluctrl.z'})
+        _mro = MultiRowOptions({ONDB_FIELD_RANGE: _fr})
+        _mro = None
+
+        row_list = store.index_iterator("requests", "CMDT", {'cmdtype' : 'cluctrl.info'}, False, _mro, _tio)
         c1=ddn()
         if row_list:
             for row in row_list:
-                continue
-                print 'INDEX:', row['uuid']
+                print 'INDEX:', row['uuid'], row['cmdtype'], row['starttime']
         c2 = ddn()
         et = c2 - c1
         print et.seconds, et.microseconds
+
+    _rc = store.execute_sync("select uuid, cmdtype, starttime, endtime from requests where cmdtype != 'cluctrl.collect_log' and cmdtype != 'cluctrl.info'")
+    print _rc
 
     store.close()
     print '*** Store is now close ...'
